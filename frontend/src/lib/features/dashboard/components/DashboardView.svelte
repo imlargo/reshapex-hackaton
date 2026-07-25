@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PageHeader, AsyncView, StatTile, RadialProgress, Iridescence } from '$lib/components/common';
+	import { PageHeader, AsyncView, StatTile, RadialProgress } from '$lib/components/common';
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -36,10 +36,6 @@
 </script>
 
 <div class="relative flex flex-col gap-6">
-	<div class="pointer-events-none absolute inset-0 -z-10 opacity-20 grayscale">
-		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
-	</div>
-
 	<div class="flex items-start gap-4">
 		<ThinkingOrb state={OrbState.WORKING} size={64} class="mt-1 hidden sm:block" />
 		<PageHeader
