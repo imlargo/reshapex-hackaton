@@ -30,13 +30,18 @@
 
 		await new Promise((resolve) => setTimeout(resolve, FAKE_LOGIN_DELAY_MS));
 
-		if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
-			await goto(config.auth.defaultRedirectPath);
+		if (email !== DEMO_EMAIL || password !== DEMO_PASSWORD) {
+			error = 'Invalid email or password.';
+			loading = false;
 			return;
 		}
 
-		error = 'Invalid email or password.';
-		loading = false;
+		try {
+			await goto(config.auth.defaultRedirectPath);
+		} catch {
+			error = 'Something went wrong. Please try again.';
+			loading = false;
+		}
 	}
 </script>
 
