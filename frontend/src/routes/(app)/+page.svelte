@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { DashboardView } from '$lib/features/dashboard';
+	import { config } from '$lib/config';
 </script>
 
 <svelte:head>
-	<title>Dashboard — SICK Expert Agent</title>
+	<title>Dashboard — {config.name}</title>
 </svelte:head>
 
 <DashboardView />
