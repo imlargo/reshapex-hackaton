@@ -43,12 +43,12 @@
 		return phases.find((p) => p.phase === phase)?.status ?? PhaseStatus.PENDING;
 	}
 
-	// undefined = sin override del usuario -> abierta mientras corre, se
-	// compacta sola al terminar. Un click siempre puede volver a abrirla/cerrarla.
+	// undefined = sin override del usuario -> desplegada por defecto.
+	// Un click siempre puede colapsarla/expandirla.
 	let overrides = $state<Partial<Record<PipelinePhase, boolean>>>({});
 
 	function isOpen(phase: PipelinePhase): boolean {
-		return overrides[phase] ?? phaseStatus(phase) === PhaseStatus.RUNNING;
+		return overrides[phase] ?? true;
 	}
 
 	function toggle(phase: PipelinePhase) {
