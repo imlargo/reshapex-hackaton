@@ -28,7 +28,7 @@
 </script>
 
 <div class="relative flex flex-col gap-6">
-	<div class="pointer-events-none absolute inset-0 -z-10 opacity-10 grayscale">
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-20 grayscale">
 		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
 	</div>
 
