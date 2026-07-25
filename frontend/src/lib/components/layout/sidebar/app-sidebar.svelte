@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import LayoutIcon from '@lucide/svelte/icons/layout-dashboard';
+	import BrainCircuitIcon from '@lucide/svelte/icons/brain-circuit';
 	import type { ComponentProps } from 'svelte';
 	import type { User } from '$lib/types/auth/user';
 	import {
+		config,
 		NAVIGATION_ITEMS,
 		NAVIGATION_GROUP_LABELS,
 		NavigationGroup,
@@ -80,11 +81,10 @@
 							<div
 								class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
 							>
-								<LayoutIcon class="size-4" />
+								<BrainCircuitIcon class="size-4" />
 							</div>
 							<div class="grid flex-1 text-start text-sm leading-tight">
-								<!-- Replace "App" with your application name -->
-								<span class="truncate font-semibold">App</span>
+								<span class="truncate font-semibold">{config.name}</span>
 							</div>
 						</a>
 					{/snippet}

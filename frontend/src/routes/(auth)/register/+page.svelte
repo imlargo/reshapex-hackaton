@@ -1,6 +1,7 @@
 <script lang="ts">
 	import RegisterForm from '$lib/features/auth/components/register/register-form.svelte';
-	import LayoutDashboardIcon from '@lucide/svelte/icons/layout-dashboard';
+	import BrainCircuitIcon from '@lucide/svelte/icons/brain-circuit';
+	import { config } from '$lib/config';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -13,11 +14,9 @@
 				<div
 					class="flex size-6 items-center justify-center rounded-md bg-primary text-primary-foreground"
 				>
-					<!-- Replace with your app logo -->
-					<LayoutDashboardIcon class="size-4" />
+					<BrainCircuitIcon class="size-4" />
 				</div>
-				<!-- Replace with your app name -->
-				App
+				{config.name}
 			</a>
 		</div>
 		<div class="flex flex-1 items-center justify-center">
