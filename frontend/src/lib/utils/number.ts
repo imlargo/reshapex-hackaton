@@ -11,3 +11,10 @@ export function formatPercent(value: number, locale = 'es'): string {
 export function formatNumber(value: number, locale = 'es'): string {
 	return new Intl.NumberFormat(locale).format(value);
 }
+
+export function formatFileSize(bytes: number): string {
+	if (bytes === 0) return '0 B';
+	const units = ['B', 'KB', 'MB', 'GB'];
+	const exponent = Math.floor(Math.log(bytes) / Math.log(1024));
+	return `${(bytes / 1024 ** exponent).toFixed(1)} ${units[exponent]}`;
+}
