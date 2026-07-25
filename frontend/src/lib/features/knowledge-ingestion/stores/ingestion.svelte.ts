@@ -4,7 +4,7 @@ import type { KnowledgeSourceInput, PipelinePhaseState, PipelineRunResult } from
 import type { PipelineDecisionEvent } from '../types';
 import { PIPELINE_PHASE_ORDER, SOURCE_FILE_EXTENSIONS } from '$lib/config';
 import { formatFileSize } from '$lib/utils/number';
-import { simulatePipelineRun } from '../services/ingestion';
+import { runKnowledgePipeline } from '../services/knowledge-pipeline';
 
 function initialPhases(): PipelinePhaseState[] {
 	return PIPELINE_PHASE_ORDER.map((phase) => ({ phase, status: PhaseStatus.PENDING, progress: 0 }));
@@ -71,7 +71,7 @@ export class IngestionStore {
 		this.decisions = [];
 
 		const outcome = await this.view.run(() =>
-			simulatePipelineRun(
+			runKnowledgePipeline(
 				this.sources,
 				(update) => {
 					this.phases = this.phases.map((phase) =>

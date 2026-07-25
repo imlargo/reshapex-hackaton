@@ -386,14 +386,27 @@ class AgentRunner:
             executor.shutdown(wait=False, cancel_futures=True)
 
 
+def _extract_json_payload(content: str) -> str:
+    stripped = content.strip()
+    if stripped.startswith("```"):
+        lines = stripped.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        stripped = "\n".join(lines).strip()
+    return stripped
+
+
 def _validate_candidate(
     content: str | None,
     exposed_ids: set[str],
 ) -> tuple[DecisionResult | None, str | None]:
     if not content:
         return None, "The provider returned empty final content"
+    payload = _extract_json_payload(content)
     try:
-        result = DecisionResult.model_validate_json(content)
+        result = DecisionResult.model_validate_json(payload)
     except ValidationError as exc:
         return None, f"The final result does not match the required schema: {exc}"
 

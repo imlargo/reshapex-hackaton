@@ -1,0 +1,935 @@
+{
+  "inventory_id": "INV-02A3FCEEAD21",
+  "objective": "Build a cited SICK knowledge base for SKU lookup, protocol compatibility, and product-family relationships.",
+  "sources": [
+    {
+      "source_id": "SRC-001-201F4F89",
+      "name": "knowledge_base/KA-06561.html",
+      "media_type": "text/html",
+      "size_bytes": 104393,
+      "checksum": "201F4F890D8EFC649970FCC0165279011F4FBBD717CD9AD66E844FBDAA6A6CD0",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-002-FFE28F29",
+      "name": "knowledge_base/KA-07774.html",
+      "media_type": "text/html",
+      "size_bytes": 95490,
+      "checksum": "FFE28F2940812926061CACCD1779EF46E65F860E38ED9CDDA84C18539C485785",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-003-B6DA300F",
+      "name": "knowledge_base/KA-08408.html",
+      "media_type": "text/html",
+      "size_bytes": 68957,
+      "checksum": "B6DA300FCE56089F9530D126979BC6167B2A48370369196DDC8EC967220B3054",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-004-2C19F91D",
+      "name": "knowledge_base/KA-08497.html",
+      "media_type": "text/html",
+      "size_bytes": 99162,
+      "checksum": "2C19F91D6E43E7049A5A073F49B61FC63FE2DB595A7EC761E76CA14F3464AAD4",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-005-9951AAF5",
+      "name": "knowledge_base/KA-08582.html",
+      "media_type": "text/html",
+      "size_bytes": 78976,
+      "checksum": "9951AAF5B0FD4DEB00AD02CBD211B9F3CEA9E3F19B6A1F7EE73BFCACDD243636",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-006-D6A5870C",
+      "name": "knowledge_base/KA-09345.html",
+      "media_type": "text/html",
+      "size_bytes": 73019,
+      "checksum": "D6A5870CBC04BCA9B6BB6660DFB803F61422E8E505C2B5E7B7CCEF65BDAC1A6F",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-007-1BE199D3",
+      "name": "knowledge_base/KA-09348.html",
+      "media_type": "text/html",
+      "size_bytes": 82397,
+      "checksum": "1BE199D3DA25F12059147A1C23DACDFEA768E228511960E72DBDBE82E7F8165D",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-008-FBDB56D5",
+      "name": "knowledge_base/KA-09388.html",
+      "media_type": "text/html",
+      "size_bytes": 115243,
+      "checksum": "FBDB56D58C9B7281B25178F4F91294029618EB384720F515759CCBCDB2F108D2",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-009-D9B6E8CA",
+      "name": "knowledge_base/KA-09438.html",
+      "media_type": "text/html",
+      "size_bytes": 114663,
+      "checksum": "D9B6E8CAECD6B881DAADF25C9222F7053B9565FEDAF67012D5D2FCDF87E94419",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-010-15406ADF",
+      "name": "knowledge_base/KA-09480.html",
+      "media_type": "text/html",
+      "size_bytes": 128259,
+      "checksum": "15406ADF52AE17C56BE2231D2BA84A6ADCC1C73616BCEA5DAEA89C141C8B1CC5",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-011-D952DD3F",
+      "name": "knowledge_base/KA-09513.html",
+      "media_type": "text/html",
+      "size_bytes": 123213,
+      "checksum": "D952DD3F8A51F56C0226220A6A291109E24AE20448E53908CE8FAB0C0AC753B0",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-012-A989EC3C",
+      "name": "knowledge_base/KA-09555.html",
+      "media_type": "text/html",
+      "size_bytes": 104834,
+      "checksum": "A989EC3CA885EC7D0E6435D5131441A7544D36AABA189FDB6425EFF56E0A24FC",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-013-EDCF1BCE",
+      "name": "knowledge_base/KA-09640.html",
+      "media_type": "text/html",
+      "size_bytes": 111118,
+      "checksum": "EDCF1BCE73C14D88CD078B9E619D2704F0D85A90699F5481F16FFACAFFA402C9",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-014-121714F4",
+      "name": "knowledge_base/KA-09665.html",
+      "media_type": "text/html",
+      "size_bytes": 94413,
+      "checksum": "121714F465CF0A2A682D2B44700AF305763769E2AD5E1200A9D79650B72E25AF",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-015-B71D707A",
+      "name": "knowledge_base/KA-09948.html",
+      "media_type": "text/html",
+      "size_bytes": 60701,
+      "checksum": "B71D707A93B8B491FB636A44DF7802EA2249D4BAF5C0C2CCCA1FB358D5F2E983",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-016-9FE0D6ED",
+      "name": "knowledge_base/KA-09975.html",
+      "media_type": "text/html",
+      "size_bytes": 61592,
+      "checksum": "9FE0D6ED2A87AAFAC0B55F7987DB231EB77BB18B4668BF86DDCAC4243463B1B7",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-017-745A1DA7",
+      "name": "knowledge_base/KA-10290.html",
+      "media_type": "text/html",
+      "size_bytes": 82987,
+      "checksum": "745A1DA764D186B97EF0522EF1EEFFAC8D8AEE9B9C11E875E829B8D1A401C977",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-018-812A360E",
+      "name": "knowledge_base/KA-10726.html",
+      "media_type": "text/html",
+      "size_bytes": 81861,
+      "checksum": "812A360EC113F8C05BCF32275734412CDBBC390DFFB491A7FDBD237153D5466B",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-019-12F03BBA",
+      "name": "knowledge_base/KA-10741.html",
+      "media_type": "text/html",
+      "size_bytes": 81056,
+      "checksum": "12F03BBAA946024E62F98D94D8229B83552C8D0543238A7DCC20F70998F078FC",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-020-77327D38",
+      "name": "pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 830858,
+      "checksum": "77327D385C09847027ED0C67344434FDD17F51455B44A7012B929A5C1DEE8B23",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-021-812B8050",
+      "name": "pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 620738,
+      "checksum": "812B8050B06945920411B44E6C0D06E00A4ABC3477DC0205F18BC10B516A1812",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-022-EFA9E485",
+      "name": "pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 1034250,
+      "checksum": "EFA9E4853D6569A9E51A7673B42331777B83589510444D32EBB82B349813B2A7",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-023-786E652C",
+      "name": "pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 481121,
+      "checksum": "786E652C4020A8D4B1E53D3B1098A49AA2A68B82DCF3FFB45CCFF817E1D4A730",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-024-6E1D7154",
+      "name": "pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 36718782,
+      "checksum": "6E1D7154ADE8441173EAD59791F664AB02D372BCD1E8A1CD77DAA6DF4EBD14C1",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-025-00AFCA47",
+      "name": "pdfs/operating_instructions/operating_instructions_AFS_AFM60_Profinet_IM0047099_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 2737725,
+      "checksum": "00AFCA4785569F2B889108F0386E4B614C87F924AEC67CF7E7D045671880B59F",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-026-AF95A6BC",
+      "name": "pdfs/operating_instructions/operating_instructions_FlexChain_IM0081347_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 10768182,
+      "checksum": "AF95A6BC0A49C36AB2FE17DBFFFC34D8E887353AF3B30D53DF39E12CEA591830",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-027-96707F62",
+      "name": "pdfs/operating_instructions/operating_instructions_InspectorP64x_65x_IM0068779_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 8453423,
+      "checksum": "96707F6263BD2826D3449F35DF77440377804DE0DD61AB77F2A9BF4D8A62D441",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-028-8270B33F",
+      "name": "pdfs/operating_instructions/operating_instructions_MicroScan3_Profinet_S7_IM0096363_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 663311,
+      "checksum": "8270B33F5B0D739FD866897499C0F508BE66D51C0D2770338607570D12AC5E7D",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-029-CEDF12BA",
+      "name": "pdfs/operating_instructions/operating_instructions_MultiScan165_IM0110273_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 13077622,
+      "checksum": "CEDF12BA4E317C63E8F0F0A102AA64D066BBB34C4F89F3204EC5834E7512915F",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-030-0ADF76C9",
+      "name": "pdfs/operating_instructions/operating_instructions_NanoScan3_IO_IM0087137_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 12415175,
+      "checksum": "0ADF76C9F77E8F5A44DFB7BBDC1B3DBA2563D540FE3BB6D2B151911854A393BF",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-031-EE6520B7",
+      "name": "pdfs/operating_instructions/operating_instructions_OD2000_IM0099818_es.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 2528432,
+      "checksum": "EE6520B7289CC186E54F5ABE4781E45A9A8C909E016BFA5EB73ADEE4CD16B1D9",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-032-B29391CE",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 6606208,
+      "checksum": "B29391CE6F66D96F5463A3C37FA6AAEB7544F7A56EB0C01D2C03B6CC23AC971D",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-033-AB7345DD",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 7628676,
+      "checksum": "AB7345DD7E08E105238BF8608ED314DACB945E150FD0233E596E37DCDF7116F3",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-034-DC77FBAB",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 6233758,
+      "checksum": "DC77FBAB46D01588F23C6499EC1D8ACE97E01DD66D5FC757E337385E194967E0",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-035-40CA3F05",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG350_Profinet_IM0101468_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 4773622,
+      "checksum": "40CA3F055842A2A937E406353F690A069E209836C92ED881E7B70B52AF5BF9D6",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-036-40D6BA44",
+      "name": "pdfs/operating_instructions/operating_instructions_SIM2500_IM0097329_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 3507870,
+      "checksum": "40D6BA444873B8B52C924BB832DC7F8AE59D83BD0D323BB5EE2786C3A5AABB15",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-037-C532AFCC",
+      "name": "pdfs/operating_instructions/operating_instructions_Safety_Designer_IM0064028_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 1912456,
+      "checksum": "C532AFCC703A3051EFB1C5A8A84C0D4BFE1D73A47C699C22C315123F7419CFDD",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-038-794CFFF4",
+      "name": "pdfs/operating_instructions/operating_instructions_TIM3xx_2D_LiDAR_IM0097598_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 5463947,
+      "checksum": "794CFFF49F5BE0A08A7A140C9D1648E10E7CC6C10F61A21D6F0C9F6D057A0EBB",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-039-15AA5A3F",
+      "name": "pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 2913788,
+      "checksum": "15AA5A3FA337163B80F2CC6EF8E7A07834CB94EEDC2810B890EDF430343D270C",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-040-0A6F39E8",
+      "name": "pdfs/product_overviews/productoverview_W4_g577401_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 2259460,
+      "checksum": "0A6F39E803702E96386A99187A8391EBB4ADFA583F3EDCFD21CD404831DA57BD",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-041-7C21AF6D",
+      "name": "pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 1365383,
+      "checksum": "7C21AF6DCBB8793C6AE214AC5F938E80638E1BAC3529C44791AC3412B4BC8A6D",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-042-DE7AF74E",
+      "name": "pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 1970549,
+      "checksum": "DE7AF74E62ACAEDA9C32C532411938EF5DD415D396AF8873441DD2A0943430EE",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-043-CBA0094F",
+      "name": "pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 2569700,
+      "checksum": "CBA0094FF7F534E9404C8D1E9A72C097DF638D36DF46D9740B45FC943ABF5AF6",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    },
+    {
+      "source_id": "SRC-044-AE64E8BC",
+      "name": "pdfs/technical_information/technical_information_pss_IM0079055_en.pdf",
+      "media_type": "application/pdf",
+      "size_bytes": 4201177,
+      "checksum": "AE64E8BC096E2FC0D45493C69AFF5BF74BD56F086ABFE09DED370D5200CFF1D1",
+      "status": "accepted",
+      "message": "Accepted for inventory; content extraction is a downstream stage."
+    }
+  ],
+  "classes": [
+    {
+      "source_id": "SRC-001-201F4F89",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-002-FFE28F29",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-003-B6DA300F",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-004-2C19F91D",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-005-9951AAF5",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-006-D6A5870C",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-007-1BE199D3",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-008-FBDB56D5",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-009-D9B6E8CA",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-010-15406ADF",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-011-D952DD3F",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-012-A989EC3C",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-013-EDCF1BCE",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-014-121714F4",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-015-B71D707A",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-016-9FE0D6ED",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-017-745A1DA7",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-018-812A360E",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-019-12F03BBA",
+      "document_class": "knowledge_article",
+      "language": "en",
+      "signals": {
+        "suffix": ".html",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 5
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-020-77327D38",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-021-812B8050",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-022-EFA9E485",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-023-786E652C",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-024-6E1D7154",
+      "document_class": "guide",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-025-00AFCA47",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-026-AF95A6BC",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-027-96707F62",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-028-8270B33F",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-029-CEDF12BA",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-030-0ADF76C9",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-031-EE6520B7",
+      "document_class": "operating_instruction",
+      "language": "es",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-032-B29391CE",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-033-AB7345DD",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-034-DC77FBAB",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-035-40CA3F05",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-036-40D6BA44",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-037-C532AFCC",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-038-794CFFF4",
+      "document_class": "operating_instruction",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-039-15AA5A3F",
+      "document_class": "product_overview",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-040-0A6F39E8",
+      "document_class": "product_overview",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-041-7C21AF6D",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-042-DE7AF74E",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-043-CBA0094F",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-044-AE64E8BC",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "suffix": ".pdf",
+        "likely_structured": false,
+        "likely_prose": true,
+        "relationship_cues": 0
+      },
+      "evidence_ids": []
+    }
+  ],
+  "limitations": [
+    "Classification uses file metadata and a bounded sample; semantic extraction remains the NormalizedKnowledgePackage producer's responsibility."
+  ]
+}

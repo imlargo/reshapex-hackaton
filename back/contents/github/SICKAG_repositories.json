@@ -1,0 +1,401 @@
+[
+  {
+    "name": "gui-check",
+    "url": "https://github.com/SICKAG/gui-check",
+    "description": "UI testing library for Java",
+    "language": "Java",
+    "updated_at": "2014-09-05"
+  },
+  {
+    "name": "sick_safetyscanners",
+    "url": "https://github.com/SICKAG/sick_safetyscanners",
+    "description": "ROS driver for SICK safety laser scanners",
+    "language": "C++",
+    "updated_at": "2026-04-21"
+  },
+  {
+    "name": "sick_safetyscanners-release",
+    "url": "https://github.com/SICKAG/sick_safetyscanners-release",
+    "description": "",
+    "language": "",
+    "updated_at": "2025-04-11"
+  },
+  {
+    "name": "DefinitelyTyped",
+    "url": "https://github.com/SICKAG/DefinitelyTyped",
+    "description": "The repository for high quality TypeScript type definitions.",
+    "language": "TypeScript",
+    "updated_at": "2018-11-21"
+  },
+  {
+    "name": "sick_line_guidance",
+    "url": "https://github.com/SICKAG/sick_line_guidance",
+    "description": " Sick_line_guidance is an open-source project to support the line guidance sensors OLS10, OLS20 and MLS (based on CANopen-interface) of the company SICK using the ROS-framework",
+    "language": "C++",
+    "updated_at": "2025-03-10"
+  },
+  {
+    "name": "sick_line_guidance-release",
+    "url": "https://github.com/SICKAG/sick_line_guidance-release",
+    "description": "",
+    "language": "",
+    "updated_at": "2019-02-18"
+  },
+  {
+    "name": "commute-logger",
+    "url": "https://github.com/SICKAG/commute-logger",
+    "description": "",
+    "language": "",
+    "updated_at": "2025-12-12"
+  },
+  {
+    "name": "ConstraintsNetwork",
+    "url": "https://github.com/SICKAG/ConstraintsNetwork",
+    "description": "",
+    "language": "C++",
+    "updated_at": "2019-09-23"
+  },
+  {
+    "name": "sick_safetyscanners_base",
+    "url": "https://github.com/SICKAG/sick_safetyscanners_base",
+    "description": "CPP (C++) Driver for SICK safety laser scanners",
+    "language": "C++",
+    "updated_at": "2026-05-05"
+  },
+  {
+    "name": "sick_lidar_localization",
+    "url": "https://github.com/SICKAG/sick_lidar_localization",
+    "description": "",
+    "language": "C++",
+    "updated_at": "2026-05-22"
+  },
+  {
+    "name": "consolectrl",
+    "url": "https://github.com/SICKAG/consolectrl",
+    "description": "consolectrl",
+    "language": "",
+    "updated_at": "2020-04-20"
+  },
+  {
+    "name": "CP210xRelay",
+    "url": "https://github.com/SICKAG/CP210xRelay",
+    "description": "Windows command line tool for controlling a usb relay board based on a CP210x chip",
+    "language": "C++",
+    "updated_at": "2022-06-16"
+  },
+  {
+    "name": "sick_safetyscanners_isaac",
+    "url": "https://github.com/SICKAG/sick_safetyscanners_isaac",
+    "description": "NVIDIA Isaac Integration Layer for SICK safety laser scanners",
+    "language": "C++",
+    "updated_at": "2025-04-11"
+  },
+  {
+    "name": "sick_safetyscanners_base-release",
+    "url": "https://github.com/SICKAG/sick_safetyscanners_base-release",
+    "description": "",
+    "language": "C++",
+    "updated_at": "2021-12-22"
+  },
+  {
+    "name": "sick_safetyscanners2-release",
+    "url": "https://github.com/SICKAG/sick_safetyscanners2-release",
+    "description": "",
+    "language": "",
+    "updated_at": "2023-03-16"
+  },
+  {
+    "name": "sick_safetyscanners2_interfaces-release",
+    "url": "https://github.com/SICKAG/sick_safetyscanners2_interfaces-release",
+    "description": "",
+    "language": "CMake",
+    "updated_at": "2021-01-11"
+  },
+  {
+    "name": "sick_safetyscanners2",
+    "url": "https://github.com/SICKAG/sick_safetyscanners2",
+    "description": " ROS2 driver for SICK safety laser scanners ",
+    "language": "C++",
+    "updated_at": "2026-07-07"
+  },
+  {
+    "name": "sick_safetyscanners2_interfaces",
+    "url": "https://github.com/SICKAG/sick_safetyscanners2_interfaces",
+    "description": "Interfaces for the ROS2 driver for SICK safety laser scanners",
+    "language": "CMake",
+    "updated_at": "2026-05-07"
+  },
+  {
+    "name": "sick_scan_xd",
+    "url": "https://github.com/SICKAG/sick_scan_xd",
+    "description": "A versatile driver for a wide range of SICK LiDAR and RADAR devices, providing support for both Linux and Windows platforms.",
+    "language": "C++",
+    "updated_at": "2026-06-30"
+  },
+  {
+    "name": "collage",
+    "url": "https://github.com/SICKAG/collage",
+    "description": "Library to make creating and using of micro frontends convenient and easy",
+    "language": "TypeScript",
+    "updated_at": "2026-04-28"
+  },
+  {
+    "name": "SICK-Solution-Hackathon",
+    "url": "https://github.com/SICKAG/SICK-Solution-Hackathon",
+    "description": "",
+    "language": "C#",
+    "updated_at": "2022-10-04"
+  },
+  {
+    "name": "SICK-App-Designer-Docs",
+    "url": "https://github.com/SICKAG/SICK-App-Designer-Docs",
+    "description": "Provides release notes, installation instructions and a tutorial for your first SensorApp for the SICK AppSpace SDK.",
+    "language": "HTML",
+    "updated_at": "2026-03-25"
+  },
+  {
+    "name": "Ranger3PythonExamples",
+    "url": "https://github.com/SICKAG/Ranger3PythonExamples",
+    "description": "Share example code on how to interface with a Ranger3/Ruler3 camera using python.",
+    "language": "Python",
+    "updated_at": "2026-02-05"
+  },
+  {
+    "name": "ScanSegmentAPI",
+    "url": "https://github.com/SICKAG/ScanSegmentAPI",
+    "description": "This repo contains example code which demonstrates how to receive and decode the streamed data of 3D and 2D laser scanners.",
+    "language": "Python",
+    "updated_at": "2026-06-23"
+  },
+  {
+    "name": "ScanSegmentDecoding",
+    "url": "https://github.com/SICKAG/ScanSegmentDecoding",
+    "description": "This repo contains code that is used in the scansegmentapi.",
+    "language": "Python",
+    "updated_at": "2023-05-17"
+  },
+  {
+    "name": "sick_safevisionary_ros1",
+    "url": "https://github.com/SICKAG/sick_safevisionary_ros1",
+    "description": "ROS1 driver for SICK safeVisionary 3D cameras",
+    "language": "C++",
+    "updated_at": "2023-11-22"
+  },
+  {
+    "name": "sick_safevisionary_ros2",
+    "url": "https://github.com/SICKAG/sick_safevisionary_ros2",
+    "description": "ROS2 driver for SICK safeVisionary 3D cameras",
+    "language": "C++",
+    "updated_at": "2026-05-07"
+  },
+  {
+    "name": "sick_safevisionary_base",
+    "url": "https://github.com/SICKAG/sick_safevisionary_base",
+    "description": "C++ driver for SICK safeVisionary 3D cameras",
+    "language": "C++",
+    "updated_at": "2025-11-10"
+  },
+  {
+    "name": "sick_safevisionary_ros1-release",
+    "url": "https://github.com/SICKAG/sick_safevisionary_ros1-release",
+    "description": "Release of ROS1 driver for SICK safeVisionary 3D cameras",
+    "language": "",
+    "updated_at": "2023-08-09"
+  },
+  {
+    "name": "sick_safevisionary_base-release",
+    "url": "https://github.com/SICKAG/sick_safevisionary_base-release",
+    "description": "Release of C++ driver for SICK safeVisionary 3D cameras",
+    "language": "",
+    "updated_at": "2023-08-09"
+  },
+  {
+    "name": "sick_tdc-e-developers-documentation",
+    "url": "https://github.com/SICKAG/sick_tdc-e-developers-documentation",
+    "description": "",
+    "language": "Go",
+    "updated_at": "2026-02-16"
+  },
+  {
+    "name": "sick_visionary_cpp_shared",
+    "url": "https://github.com/SICKAG/sick_visionary_cpp_shared",
+    "description": "shared cpp code used api, sdk, doc, samples projects",
+    "language": "C++",
+    "updated_at": "2025-04-08"
+  },
+  {
+    "name": "sick_visionary_ros",
+    "url": "https://github.com/SICKAG/sick_visionary_ros",
+    "description": "interface to sick visionary devices from ROS nodes",
+    "language": "C++",
+    "updated_at": "2025-06-07"
+  },
+  {
+    "name": "sick_visionary_ros-release",
+    "url": "https://github.com/SICKAG/sick_visionary_ros-release",
+    "description": "Release sick_visionary_ros for ROS buildfarm",
+    "language": "",
+    "updated_at": "2024-04-22"
+  },
+  {
+    "name": "webcc",
+    "url": "https://github.com/SICKAG/webcc",
+    "description": "Lightweight C++ HTTP client and server library based on Asio for embedding purpose.",
+    "language": "C++",
+    "updated_at": "2024-06-04"
+  },
+  {
+    "name": "sick_visionary_cpp_samples",
+    "url": "https://github.com/SICKAG/sick_visionary_cpp_samples",
+    "description": "publish open source samples (supplementary material)",
+    "language": "C++",
+    "updated_at": "2024-06-06"
+  },
+  {
+    "name": "sick_visionary_samples",
+    "url": "https://github.com/SICKAG/sick_visionary_samples",
+    "description": "publish open source samples (supplementary material)",
+    "language": "C++",
+    "updated_at": "2026-07-23"
+  },
+  {
+    "name": "SICK_AppSpace_CodingStarterKit",
+    "url": "https://github.com/SICKAG/SICK_AppSpace_CodingStarterKit",
+    "description": "Providing info material regarding the SICK AppSpace CodingStarterKit GitHub organization.",
+    "language": "",
+    "updated_at": "2025-11-05"
+  },
+  {
+    "name": "sick_scan_rest_client",
+    "url": "https://github.com/SICKAG/sick_scan_rest_client",
+    "description": "The REST-API-Client reads and writes variables and calls methods via the REST interface of the scanner.",
+    "language": "Python",
+    "updated_at": "2026-01-16"
+  },
+  {
+    "name": "sick_visionary_python_base",
+    "url": "https://github.com/SICKAG/sick_visionary_python_base",
+    "description": "Python support library",
+    "language": "Python",
+    "updated_at": "2026-07-06"
+  },
+  {
+    "name": "sick_visionary_cpp_base",
+    "url": "https://github.com/SICKAG/sick_visionary_cpp_base",
+    "description": "C++ supporting library",
+    "language": "C++",
+    "updated_at": "2026-06-08"
+  },
+  {
+    "name": "pumolink",
+    "url": "https://github.com/SICKAG/pumolink",
+    "description": "This library allows you to connect Python classes and OpenUSD Prims using decorators.",
+    "language": "Python",
+    "updated_at": "2026-06-12"
+  },
+  {
+    "name": "MauCppHttpServer",
+    "url": "https://github.com/SICKAG/MauCppHttpServer",
+    "description": "",
+    "language": "C++",
+    "updated_at": "2024-07-11"
+  },
+  {
+    "name": "SmtpClient-for-Qt",
+    "url": "https://github.com/SICKAG/SmtpClient-for-Qt",
+    "description": "An SMTP Client writen in C++ for Qt. Allows applications to send emails (MIME with text, html, attachments, inline files, etc.) via SMTP. Supports SSL and SMTP authentication.",
+    "language": "",
+    "updated_at": "2024-07-12"
+  },
+  {
+    "name": "ScanSegmentAPICSharp",
+    "url": "https://github.com/SICKAG/ScanSegmentAPICSharp",
+    "description": "This repo contains detailed code examples for customers to experiment with.",
+    "language": "C#",
+    "updated_at": "2025-09-23"
+  },
+  {
+    "name": "KaitaiStructDescriptions",
+    "url": "https://github.com/SICKAG/KaitaiStructDescriptions",
+    "description": "This repo contains Kaitai Struct descriptions for generating code in any programming language.",
+    "language": "Kaitai Struct",
+    "updated_at": "2026-06-23"
+  },
+  {
+    "name": "sick_tdc-x-developers-documentation",
+    "url": "https://github.com/SICKAG/sick_tdc-x-developers-documentation",
+    "description": "This is the SICK TDC-X developer's documentation, aimed at customers, users and developers alike to explore the TDC-X's options, capabilities and programmability. We want the user to get to know the TDC-X device so that its wide variety of options could be used to their full extent.",
+    "language": "Lua",
+    "updated_at": "2026-06-30"
+  },
+  {
+    "name": "QuBA-libre",
+    "url": "https://github.com/SICKAG/QuBA-libre",
+    "description": "QuBA-libre is an risk assessment tool that allows organizations to identify and mitigate risks in their product development lifecycle.",
+    "language": "",
+    "updated_at": "2026-07-23"
+  },
+  {
+    "name": "sick_visionary_gev_ros2",
+    "url": "https://github.com/SICKAG/sick_visionary_gev_ros2",
+    "description": "Provide ros2 wrapper for our devices with GigEVision protocol",
+    "language": "C++",
+    "updated_at": "2026-06-09"
+  },
+  {
+    "name": "sick_visionary_gev_samples",
+    "url": "https://github.com/SICKAG/sick_visionary_gev_samples",
+    "description": "Provide samples for our products with GigEVision protocol",
+    "language": "C++",
+    "updated_at": "2026-06-08"
+  },
+  {
+    "name": "sick_visionary_gev_base",
+    "url": "https://github.com/SICKAG/sick_visionary_gev_base",
+    "description": "Publication of binary GigEVision libraries needed by our OSS components",
+    "language": "C",
+    "updated_at": "2026-02-25"
+  },
+  {
+    "name": "SICK-Sensor-Starter-Kits",
+    "url": "https://github.com/SICKAG/SICK-Sensor-Starter-Kits",
+    "description": "Repository for documentation and small code examples (python) for easy to use sensor kits.",
+    "language": "",
+    "updated_at": "2026-07-14"
+  },
+  {
+    "name": "sick_perception_sdk",
+    "url": "https://github.com/SICKAG/sick_perception_sdk",
+    "description": "A modern C++17 SDK for developing applications with multiScan100, picoScan100, and LRS4000 sensors, providing access to sensor configuration, scan data, and integration examples.",
+    "language": "C++",
+    "updated_at": "2026-07-13"
+  },
+  {
+    "name": "EDU-AI",
+    "url": "https://github.com/SICKAG/EDU-AI",
+    "description": "Repository for customers to access learning material for Education Set AI (1116204)",
+    "language": "",
+    "updated_at": "2026-04-24"
+  },
+  {
+    "name": "education",
+    "url": "https://github.com/SICKAG/education",
+    "description": "Projects and documentation for interns / students",
+    "language": "HTML",
+    "updated_at": "2026-04-23"
+  },
+  {
+    "name": "sick-user-workspace",
+    "url": "https://github.com/SICKAG/sick-user-workspace",
+    "description": "",
+    "language": "",
+    "updated_at": "2026-06-03"
+  },
+  {
+    "name": "PLB-TRAINING",
+    "url": "https://github.com/SICKAG/PLB-TRAINING",
+    "description": "",
+    "language": "",
+    "updated_at": "2026-06-09"
+  }
+]

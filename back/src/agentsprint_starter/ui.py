@@ -4,7 +4,7 @@ import streamlit as st
 
 from .config import get_settings
 from .ingest import records_from_uploads
-from .provider import create_deepseek_model
+from .provider import create_chat_model
 from .runner import AgentRunError, AgentRunner
 from .tools import EvidenceStore, ToolRegistry
 
@@ -27,10 +27,13 @@ def render_app() -> None:
     with st.sidebar:
         st.subheader("Run control")
         if settings.provider_is_configured:
-            st.success(f"DeepSeek ready · {settings.llm_model}")
+            st.success(f"Provider ready · {settings.llm_provider} · {settings.llm_model}")
         else:
-            st.error("DeepSeek key not configured")
-            st.code("Copy-Item .env.example .env\n# then set LLM_API_KEY", language="powershell")
+            st.error("LLM provider not configured")
+            st.code(
+                "Copy-Item .env.example .env\n# then set LLM_API_KEY or CLAUDE_API_KEY",
+                language="powershell",
+            )
         st.caption(
             f"Limits · {settings.agent_max_steps} steps · "
             f"{settings.agent_max_retries} repair · "
@@ -102,7 +105,7 @@ def render_app() -> None:
         with st.status("Running bounded evidence loop…", expanded=True) as status:
             st.write("Connecting to the configured DeepSeek model")
             runner = AgentRunner(
-                model=create_deepseek_model(settings),
+                model=create_chat_model(settings),
                 tools=ToolRegistry(EvidenceStore(records)),
                 settings=settings,
             )

@@ -1,0 +1,845 @@
+{
+  "inventory_id": "INV-001",
+  "objective": "Build a cited SICK knowledge base for SKU lookup, protocol compatibility, and product-family relationships.",
+  "sources": [
+    {
+      "source_id": "SRC-002",
+      "name": "knowledge_base/KA-06561.html",
+      "media_type": "html",
+      "size_bytes": 104393,
+      "checksum": "201f4f890d8efc64",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-003",
+      "name": "knowledge_base/KA-07774.html",
+      "media_type": "html",
+      "size_bytes": 95490,
+      "checksum": "ffe28f2940812926",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-004",
+      "name": "knowledge_base/KA-08408.html",
+      "media_type": "html",
+      "size_bytes": 68957,
+      "checksum": "b6da300fce56089f",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-005",
+      "name": "knowledge_base/KA-08497.html",
+      "media_type": "html",
+      "size_bytes": 99162,
+      "checksum": "2c19f91d6e43e704",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-006",
+      "name": "knowledge_base/KA-08582.html",
+      "media_type": "html",
+      "size_bytes": 78976,
+      "checksum": "9951aaf5b0fd4deb",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-007",
+      "name": "knowledge_base/KA-09345.html",
+      "media_type": "html",
+      "size_bytes": 73019,
+      "checksum": "d6a5870cbc04bca9",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-008",
+      "name": "knowledge_base/KA-09348.html",
+      "media_type": "html",
+      "size_bytes": 82397,
+      "checksum": "1be199d3da25f120",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-009",
+      "name": "knowledge_base/KA-09388.html",
+      "media_type": "html",
+      "size_bytes": 115243,
+      "checksum": "fbdb56d58c9b7281",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-010",
+      "name": "knowledge_base/KA-09438.html",
+      "media_type": "html",
+      "size_bytes": 114663,
+      "checksum": "d9b6e8caecd6b881",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-011",
+      "name": "knowledge_base/KA-09480.html",
+      "media_type": "html",
+      "size_bytes": 128259,
+      "checksum": "15406adf52ae17c5",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-012",
+      "name": "knowledge_base/KA-09513.html",
+      "media_type": "html",
+      "size_bytes": 123213,
+      "checksum": "d952dd3f8a51f56c",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-013",
+      "name": "knowledge_base/KA-09555.html",
+      "media_type": "html",
+      "size_bytes": 104834,
+      "checksum": "a989ec3ca885ec7d",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-014",
+      "name": "knowledge_base/KA-09640.html",
+      "media_type": "html",
+      "size_bytes": 111118,
+      "checksum": "edcf1bce73c14d88",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-015",
+      "name": "knowledge_base/KA-09665.html",
+      "media_type": "html",
+      "size_bytes": 94413,
+      "checksum": "121714f465cf0a2a",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-016",
+      "name": "knowledge_base/KA-09948.html",
+      "media_type": "html",
+      "size_bytes": 60701,
+      "checksum": "b71d707a93b8b491",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-017",
+      "name": "knowledge_base/KA-09975.html",
+      "media_type": "html",
+      "size_bytes": 61592,
+      "checksum": "9fe0d6ed2a87aafa",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-018",
+      "name": "knowledge_base/KA-10290.html",
+      "media_type": "html",
+      "size_bytes": 82987,
+      "checksum": "745a1da764d186b9",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-019",
+      "name": "knowledge_base/KA-10726.html",
+      "media_type": "html",
+      "size_bytes": 81861,
+      "checksum": "812a360ec113f8c0",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-020",
+      "name": "knowledge_base/KA-10741.html",
+      "media_type": "html",
+      "size_bytes": 81056,
+      "checksum": "12f03bbaa946024e",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-021",
+      "name": "pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 830858,
+      "checksum": "77327d385c098470",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-022",
+      "name": "pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 620738,
+      "checksum": "812b8050b0694592",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-023",
+      "name": "pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 1034250,
+      "checksum": "efa9e4853d6569a9",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-024",
+      "name": "pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 481121,
+      "checksum": "786e652c4020a8d4",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-025",
+      "name": "pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 36718782,
+      "checksum": "6e1d7154ade84411",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-026",
+      "name": "pdfs/operating_instructions/operating_instructions_AFS_AFM60_Profinet_IM0047099_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 2737725,
+      "checksum": "00afca4785569f2b",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-027",
+      "name": "pdfs/operating_instructions/operating_instructions_FlexChain_IM0081347_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 10768182,
+      "checksum": "af95a6bc0a49c36a",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-028",
+      "name": "pdfs/operating_instructions/operating_instructions_InspectorP64x_65x_IM0068779_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 8453423,
+      "checksum": "96707f6263bd2826",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-029",
+      "name": "pdfs/operating_instructions/operating_instructions_MicroScan3_Profinet_S7_IM0096363_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 663311,
+      "checksum": "8270b33f5b0d739f",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-030",
+      "name": "pdfs/operating_instructions/operating_instructions_MultiScan165_IM0110273_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 13077622,
+      "checksum": "cedf12ba4e317c63",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-031",
+      "name": "pdfs/operating_instructions/operating_instructions_NanoScan3_IO_IM0087137_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 12415175,
+      "checksum": "0adf76c9f77e8f5a",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-032",
+      "name": "pdfs/operating_instructions/operating_instructions_OD2000_IM0099818_es.pdf",
+      "media_type": "pdf",
+      "size_bytes": 2528432,
+      "checksum": "ee6520b7289cc186",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-033",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 6606208,
+      "checksum": "b29391ce6f66d96f",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-034",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 7628676,
+      "checksum": "ab7345dd7e08e105",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-035",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 6233758,
+      "checksum": "dc77fbab46d01588",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-036",
+      "name": "pdfs/operating_instructions/operating_instructions_SIG350_Profinet_IM0101468_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 4773622,
+      "checksum": "40ca3f055842a2a9",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-037",
+      "name": "pdfs/operating_instructions/operating_instructions_SIM2500_IM0097329_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 3507870,
+      "checksum": "40d6ba444873b8b5",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-038",
+      "name": "pdfs/operating_instructions/operating_instructions_Safety_Designer_IM0064028_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 1912456,
+      "checksum": "c532afcc703a3051",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-039",
+      "name": "pdfs/operating_instructions/operating_instructions_TIM3xx_2D_LiDAR_IM0097598_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 5463947,
+      "checksum": "794cfff49f5be0a0",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-040",
+      "name": "pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 2913788,
+      "checksum": "15aa5a3fa337163b",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-041",
+      "name": "pdfs/product_overviews/productoverview_W4_g577401_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 2259460,
+      "checksum": "0a6f39e803702e96",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-042",
+      "name": "pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 1365383,
+      "checksum": "7c21af6dcbb8793c",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-043",
+      "name": "pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 1970549,
+      "checksum": "de7af74e62acaeda",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-044",
+      "name": "pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 2569700,
+      "checksum": "cba0094ff7f534e9",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    },
+    {
+      "source_id": "SRC-045",
+      "name": "pdfs/technical_information/technical_information_pss_IM0079055_en.pdf",
+      "media_type": "pdf",
+      "size_bytes": 4201177,
+      "checksum": "ae64e8bc096e2fc0",
+      "status": "accepted",
+      "message": "ready for semantic processing"
+    }
+  ],
+  "classes": [
+    {
+      "source_id": "SRC-002",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-06561.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-06561.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-003",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-07774.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-07774.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-004",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-08408.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-08408.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-005",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-08497.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-08497.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-006",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-08582.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-08582.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-007",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09345.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09345.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-008",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09348.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09348.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-009",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09388.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09388.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-010",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09438.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09438.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-011",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09480.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09480.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-012",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09513.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09513.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-013",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09555.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09555.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-014",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09640.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09640.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-015",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09665.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09665.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-016",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09948.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09948.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-017",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-09975.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-09975.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-018",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-10290.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-10290.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-019",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-10726.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-10726.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-020",
+      "document_class": "knowledge_base_article",
+      "language": "en",
+      "signals": {
+        "relative_path": "knowledge_base/KA-10741.html",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/knowledge_base/KA-10741.html"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-021",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-022",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-023",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-024",
+      "document_class": "datasheet",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-025",
+      "document_class": "general_document",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-026",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_AFS_AFM60_Profinet_IM0047099_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_AFS_AFM60_Profinet_IM0047099_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-027",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_FlexChain_IM0081347_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_FlexChain_IM0081347_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-028",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_InspectorP64x_65x_IM0068779_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_InspectorP64x_65x_IM0068779_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-029",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_MicroScan3_Profinet_S7_IM0096363_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_MicroScan3_Profinet_S7_IM0096363_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-030",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_MultiScan165_IM0110273_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_MultiScan165_IM0110273_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-031",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_NanoScan3_IO_IM0087137_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_NanoScan3_IO_IM0087137_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-032",
+      "document_class": "operating_instructions",
+      "language": "es",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_OD2000_IM0099818_es.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_OD2000_IM0099818_es.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-033",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-034",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-035",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-036",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_SIG350_Profinet_IM0101468_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_SIG350_Profinet_IM0101468_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-037",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_SIM2500_IM0097329_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_SIM2500_IM0097329_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-038",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_Safety_Designer_IM0064028_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_Safety_Designer_IM0064028_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-039",
+      "document_class": "operating_instructions",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/operating_instructions/operating_instructions_TIM3xx_2D_LiDAR_IM0097598_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/operating_instructions/operating_instructions_TIM3xx_2D_LiDAR_IM0097598_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-040",
+      "document_class": "general_document",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-041",
+      "document_class": "product_overview",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/product_overviews/productoverview_W4_g577401_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/product_overviews/productoverview_W4_g577401_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-042",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-043",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-044",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf"
+      },
+      "evidence_ids": []
+    },
+    {
+      "source_id": "SRC-045",
+      "document_class": "technical_information",
+      "language": "en",
+      "signals": {
+        "relative_path": "pdfs/technical_information/technical_information_pss_IM0079055_en.pdf",
+        "absolute_path": "/home/jeronimorestrepoangel/ReshapeX-Hackathon---Codex/contents/pdfs/technical_information/technical_information_pss_IM0079055_en.pdf"
+      },
+      "evidence_ids": []
+    }
+  ],
+  "limitations": []
+}

@@ -61,8 +61,9 @@
 					<ThinkingOrb state={OrbState.LISTENING} size={20} />
 				{/snippet}
 				<p>
-					Cuéntame qué fuentes quieres incorporar: archivos PDF, Excel o Markdown, o un endpoint de
-					API. Cuando estés listo, envíalas y te muestro cada fase a medida que avanza.
+					Esta corrida usa el corpus SICK empaquetado en <code>contents/</code> y el backend Python
+					en <code>back/</code>. Las fuentes que subas aquí orientan la demo visual; el build real
+					consume el corpus representativo del repositorio.
 				</p>
 			</ChatBubble>
 

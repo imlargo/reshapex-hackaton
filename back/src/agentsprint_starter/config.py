@@ -15,9 +15,10 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    llm_provider: Literal["deepseek"] = "deepseek"
+    llm_provider: Literal["deepseek", "anthropic"] = "deepseek"
     llm_model: str = "deepseek-v4-flash"
     llm_api_key: str = ""
+    claude_api_key: str = ""
     llm_base_url: str = "https://api.deepseek.com"
     llm_temperature: float = 0.0
     llm_timeout_seconds: float = Field(default=60.0, gt=0)
@@ -29,13 +30,25 @@ class Settings(BaseSettings):
     tool_timeout_seconds: float = Field(default=8.0, gt=0, le=60)
 
     @property
+    def effective_llm_api_key(self) -> str:
+        if self.llm_provider == "anthropic":
+            return self.claude_api_key.strip() or self.llm_api_key.strip()
+        return self.llm_api_key.strip()
+
+    @property
     def provider_is_configured(self) -> bool:
-        return bool(self.llm_api_key.strip() and self.llm_model.strip())
+        return bool(self.effective_llm_api_key and self.llm_model.strip())
 
     def require_provider(self) -> None:
         if not self.provider_is_configured:
+            provider_hint = (
+                "CLAUDE_API_KEY"
+                if self.llm_provider == "anthropic"
+                else "LLM_API_KEY"
+            )
             raise ValueError(
-                "DeepSeek is not configured. Copy .env.example to .env and set LLM_API_KEY."
+                f"{self.llm_provider} is not configured. "
+                f"Copy .env.example to .env and set {provider_hint}."
             )
 
 

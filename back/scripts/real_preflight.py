@@ -4,7 +4,7 @@ import json
 import sys
 
 from agentsprint_starter.config import Settings
-from agentsprint_starter.provider import create_deepseek_model
+from agentsprint_starter.provider import create_chat_model
 from agentsprint_starter.runner import AgentRunner
 from agentsprint_starter.schemas import EvidenceRecord
 from agentsprint_starter.tools import EvidenceStore, ToolRegistry
@@ -39,7 +39,7 @@ def main() -> int:
         ),
     ]
     outcome = AgentRunner(
-        model=create_deepseek_model(settings),
+        model=create_chat_model(settings),
         tools=ToolRegistry(EvidenceStore(evidence)),
         settings=settings,
     ).run(
@@ -57,7 +57,7 @@ def main() -> int:
                 "status": "ok",
                 "model": outcome.trace.model,
                 "orchestration": "langgraph",
-                "model_integration": "langchain-deepseek",
+                "model_integration": f"langchain-{settings.llm_provider}",
                 "non_thinking": True,
                 "tool_calls": [event.name for event in tool_events],
                 "structured_result": True,
