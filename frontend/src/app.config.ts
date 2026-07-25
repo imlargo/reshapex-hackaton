@@ -1,6 +1,7 @@
 import { env } from '$env/dynamic/public';
 
 export interface AppConfig {
+	name: string;
 	api: {
 		baseUrl: string;
 	};
@@ -21,6 +22,7 @@ export interface AppConfig {
 }
 
 const config: AppConfig = {
+	name: 'Cortex',
 	api: {
 		baseUrl: env.PUBLIC_API_URL ?? ''
 	},
