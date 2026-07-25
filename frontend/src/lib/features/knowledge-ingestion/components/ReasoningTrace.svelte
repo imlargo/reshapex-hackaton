@@ -1,22 +1,19 @@
 <script lang="ts">
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import DecisionCard from './DecisionCard.svelte';
-	import RelationsGraph from './RelationsGraph.svelte';
-	import ConflictCard from './ConflictCard.svelte';
+	import DecisionUnit from './DecisionUnit.svelte';
 	import { PIPELINE_PHASE_LABELS } from '$lib/config';
 	import { PhaseStatus, PipelinePhase } from '$lib/types/knowledge';
 	import type { PipelinePhaseState } from '$lib/types/knowledge';
-	import type { PipelineTraceEvent } from '../types';
+	import type { PipelineDecisionEvent } from '../types';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { fade, slide } from 'svelte/transition';
 
 	let {
 		events,
 		phases
 	}: {
-		events: PipelineTraceEvent[];
+		events: PipelineDecisionEvent[];
 		phases: PipelinePhaseState[];
 	} = $props();
 
@@ -33,7 +30,7 @@
 
 	// Agrupa eventos consecutivos por fase para poder colapsarlos por separado.
 	const grouped = $derived.by(() => {
-		const groups: { phase: PipelinePhase; items: PipelineTraceEvent[] }[] = [];
+		const groups: { phase: PipelinePhase; items: PipelineDecisionEvent[] }[] = [];
 		for (const event of events) {
 			const current = groups.at(-1);
 			if (current && current.phase === event.phase) current.items.push(event);
@@ -86,23 +83,7 @@
 				<div transition:slide={{ duration: 200 }} class="flex flex-col gap-2 pl-7">
 					{#each group.items as event (event.id)}
 						<div in:fade={{ duration: 220 }}>
-							{#if event.kind === 'log'}
-								<div class="flex items-start gap-2 text-sm leading-relaxed">
-									<ChevronRightIcon class="mt-0.5 size-3 shrink-0 text-muted-foreground" />
-									<span class="text-foreground/90">{event.text}</span>
-								</div>
-							{:else if event.kind === 'decision'}
-								<DecisionCard
-									question={event.question}
-									options={event.options}
-									chosen={event.chosen}
-									rationale={event.rationale}
-								/>
-							{:else if event.kind === 'relations'}
-								<RelationsGraph samples={event.samples} />
-							{:else if event.kind === 'conflict'}
-								<ConflictCard sample={event.sample} />
-							{/if}
+							<DecisionUnit {event} />
 						</div>
 					{/each}
 				</div>

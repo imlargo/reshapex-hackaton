@@ -21,7 +21,7 @@
 
 	$effect(() => {
 		// Se re-ejecuta con cada evento nuevo o al llegar el resultado final.
-		store.traceEvents.length;
+		store.decisions.length;
 		store.result;
 		bottomAnchor?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	});
@@ -83,7 +83,7 @@
 					</div>
 				</ChatBubble>
 
-				<ReasoningTrace events={store.traceEvents} phases={store.phases} />
+				<ReasoningTrace events={store.decisions} phases={store.phases} />
 
 				{#if store.result}
 					<PipelineResultSummary result={store.result} onReset={() => store.reset()} />
