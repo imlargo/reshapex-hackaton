@@ -3,7 +3,6 @@ export {
 	AuthStore,
 	authCookies,
 	AuthCookiesManager,
-	createAuthHandler,
 	AuthService,
 	hasPermission,
 	hasAnyPermission,

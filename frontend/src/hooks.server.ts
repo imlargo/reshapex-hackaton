@@ -1,7 +1,4 @@
-import type { Handle, HandleServerError } from '@sveltejs/kit';
-import { config } from '$lib/config';
-import { AuthService, createAuthHandler } from '$lib/features/auth';
-import { serverAuthCookies } from '$lib/features/auth/server';
+import type { HandleServerError } from '@sveltejs/kit';
 import { normalizeError } from '$lib/core/errors';
 
 export const handleError: HandleServerError = ({ error, status }) => {
