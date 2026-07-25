@@ -27,7 +27,7 @@ export interface PipelinePhaseState {
 	finishedAt?: string;
 }
 
-// Espeja RagStrategyPlan.strategy + .storage (analisis/agentsprint INTERFACES.md)
+// Espeja RagStrategyPlan.strategy + .storage (backend/agentsprint INTERFACES.md)
 export interface RagStrategyRecommendation {
 	name: string;
 	storageTopology: string;

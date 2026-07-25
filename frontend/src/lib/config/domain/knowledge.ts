@@ -1,7 +1,7 @@
 import { PipelinePhase, SourceType, FactStatus } from '$lib/types/knowledge';
 
 // ─── Pipeline phases ──────────────────────────────────────────────────────────
-// Flujo congelado de 9 etapas — ver analisis/agentsprint/03_contracts/PRIMARY_JOURNEY.md.
+// Flujo congelado de 9 etapas — ver backend/agentsprint/03_contracts/PRIMARY_JOURNEY.md.
 // "Información suministrada" y "Base de conocimiento lista" son el intake y el
 // resultado final (no fases con progreso propio); estas 7 son las intermedias.
 export const PIPELINE_PHASE_ORDER: PipelinePhase[] = [

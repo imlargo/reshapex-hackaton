@@ -2,26 +2,26 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$ROOT/back"
+cd "$ROOT/backend"
 
-if [[ ! -d "$ROOT/contents" ]]; then
-  echo "Missing corpus at $ROOT/contents" >&2
+if [[ ! -d "$ROOT/backend/contents" ]]; then
+  echo "Missing corpus at $ROOT/backend/contents" >&2
   exit 1
 fi
 
-if [[ ! -f "$ROOT/back/.env" && -f "$ROOT/back/.env.example" ]]; then
-  echo "Copy back/.env.example to back/.env and set CLAUDE_API_KEY or LLM_API_KEY" >&2
+if [[ ! -f "$ROOT/backend/.env" && -f "$ROOT/backend/.env.example" ]]; then
+  echo "Copy backend/.env.example to backend/.env and set CLAUDE_API_KEY or LLM_API_KEY" >&2
   exit 1
 fi
 
 PYTHON=""
-if [[ -x "$ROOT/back/.venv/bin/python" ]]; then
-  PYTHON="$ROOT/back/.venv/bin/python"
+if [[ -x "$ROOT/backend/.venv/bin/python" ]]; then
+  PYTHON="$ROOT/backend/.venv/bin/python"
 elif [[ -x "$HOME/ReshapeX-Hackathon---Codex/.venv/bin/python" ]]; then
   PYTHON="$HOME/ReshapeX-Hackathon---Codex/.venv/bin/python"
-  "$PYTHON" -m pip install -e "$ROOT/back" -q
+  "$PYTHON" -m pip install -e "$ROOT/backend" -q
 else
-  echo "Create back/.venv or use the ReshapeX-Hackathon---Codex virtualenv." >&2
+  echo "Create backend/.venv or use the ReshapeX-Hackathon---Codex virtualenv." >&2
   exit 1
 fi
 

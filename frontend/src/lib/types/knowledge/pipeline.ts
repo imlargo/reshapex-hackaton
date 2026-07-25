@@ -1,4 +1,4 @@
-// Flujo congelado de 9 etapas (ver analisis/agentsprint/03_contracts/PRIMARY_JOURNEY.md):
+// Flujo congelado de 9 etapas (ver backend/agentsprint/03_contracts/PRIMARY_JOURNEY.md):
 // Información suministrada -> [estas 7 fases] -> Base de conocimiento lista.
 export enum PipelinePhase {
 	INVENTORY = 'inventory',
@@ -37,7 +37,7 @@ export enum ActivitySeverity {
 	CRITICAL = 'critical'
 }
 
-// Ver analisis/agentsprint/03_contracts/INTERFACES.md — ValidationReport.status
+// Ver backend/agentsprint/03_contracts/INTERFACES.md — ValidationReport.status
 export enum ValidationStatus {
 	READY = 'ready',
 	CONDITIONAL = 'conditional',

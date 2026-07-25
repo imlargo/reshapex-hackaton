@@ -3,7 +3,7 @@
 Monorepo con:
 
 - `frontend/` — SvelteKit (Usuario 3)
-- `back/` — backend Python `agentsprint-starter` (`codex/semantic-processing`, tip `f3d76dd+`)
+- `backend/` — backend Python `agentsprint-starter` (`codex/semantic-processing`, tip `f3d76dd+`)
 - `contents/` — corpus SICK compartido
 
 ## Arranque local
@@ -12,7 +12,7 @@ Terminal 1 — API de conocimiento (puerto 8001):
 
 ```bash
 chmod +x scripts/run-knowledge-api.sh
-cp back/.env.example back/.env   # configurar CLAUDE_API_KEY o LLM_API_KEY
+cp backend/.env.example backend/.env   # configurar CLAUDE_API_KEY o LLM_API_KEY
 ./scripts/run-knowledge-api.sh
 ```
 
@@ -40,8 +40,8 @@ El frontend llama rutas server-side propias:
 Variables server-only en `frontend/.env`:
 
 - `KNOWLEDGE_API_URL` — default `http://127.0.0.1:8001`
-- `KNOWLEDGE_CORPUS_DIR` — default `contents` (dentro de `back/`, 57 fuentes SICK)
+- `KNOWLEDGE_CORPUS_DIR` — default `contents` (dentro de `backend/`, 57 fuentes SICK)
 
 ## Rama
 
-`integrate/backend-semantic-processing` — sincroniza `back/` y conecta la UI de ingestión al servicio real.
+`integrate/backend-semantic-processing` — sincroniza `backend/` y conecta la UI de ingestión al servicio real.

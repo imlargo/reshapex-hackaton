@@ -62,7 +62,7 @@
 				{/snippet}
 				<p>
 					Esta corrida usa el corpus SICK empaquetado en <code>contents/</code> y el backend Python
-					en <code>back/</code>. Las fuentes que subas aquí orientan la demo visual; el build real
+					en <code>backend/</code>. Las fuentes que subas aquí orientan la demo visual; el build real
 					consume el corpus representativo del repositorio.
 				</p>
 			</ChatBubble>

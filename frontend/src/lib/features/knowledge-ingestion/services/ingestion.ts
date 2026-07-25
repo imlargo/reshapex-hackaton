@@ -398,7 +398,7 @@ function decisionsForPhase(phase: PipelinePhase, ctx: RunContext): PendingDecisi
 }
 
 // TODO: reemplazar por una conexión real al pipeline (contra el boundary
-// Usuario1 -> Usuario3 descrito en analisis/agentsprint/03_contracts/INTERFACES.md)
+// Usuario1 -> Usuario3 descrito en backend/agentsprint/03_contracts/INTERFACES.md)
 // cuando exista el backend. Por ahora simula el avance fase por fase, decisión
 // por decisión, para poder construir la retroalimentación visual del pipeline.
 // Ver también el handoff de demo visual: esto es una traza de decisiones y
