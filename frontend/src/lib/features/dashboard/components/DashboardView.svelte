@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { PageHeader, AsyncView, StatTile, RadialProgress } from '$lib/components/common';
+	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { DashboardStore } from '../stores/dashboard.svelte';
@@ -24,17 +25,21 @@
 </script>
 
 <div class="flex flex-col gap-6">
-	<PageHeader
-		title="Estado de la base de conocimiento"
-		description="El estado actual del cerebro: qué sabe, qué tan seguro está y qué necesita revisión humana."
-	>
-		{#snippet actions()}
-			<Button href="/knowledge/ingest" size="sm">
-				<UploadIcon class="size-4" />
-				Alimentar conocimiento
-			</Button>
-		{/snippet}
-	</PageHeader>
+	<div class="flex items-start gap-4">
+		<ThinkingOrb state={OrbState.WORKING} size={64} class="mt-1 hidden sm:block" />
+		<PageHeader
+			class="flex-1"
+			title="Estado de la base de conocimiento"
+			description="El estado actual del cerebro: qué sabe, qué tan seguro está y qué necesita revisión humana."
+		>
+			{#snippet actions()}
+				<Button href="/knowledge/ingest" size="sm">
+					<UploadIcon class="size-4" />
+					Alimentar conocimiento
+				</Button>
+			{/snippet}
+		</PageHeader>
+	</div>
 
 	<AsyncView viewState={store.view}>
 		{#snippet children()}
