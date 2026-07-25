@@ -12,6 +12,7 @@ import type {
 	PipelineRunResult,
 	ValidationCheck
 } from '$lib/types/knowledge';
+import type { PipelineLogLine } from '../types';
 import { PIPELINE_PHASE_ORDER, SOURCE_TYPE_LABELS } from '$lib/config';
 
 function delay(ms: number) {
@@ -20,6 +21,18 @@ function delay(ms: number) {
 
 function randomBetween(min: number, max: number): number {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Pausa "orgánica": casi siempre corta, a veces una pausa larga de deliberación.
+function thinkingDelay(): Promise<unknown> {
+	const long = Math.random() < 0.16;
+	return delay(long ? randomBetween(1400, 2600) : randomBetween(450, 1300));
+}
+
+let lineIdSeq = 0;
+function nextLineId(): string {
+	lineIdSeq += 1;
+	return `line-${lineIdSeq}`;
 }
 
 const RELATION_TYPES = [
@@ -39,82 +52,102 @@ function corpusProfile(sources: KnowledgeSourceInput[]): string {
 	return `${sources.length} fuentes clasificadas: ${parts.join(', ')}.`;
 }
 
-function phaseMetric(
-	phase: PipelinePhase,
-	sources: KnowledgeSourceInput[],
-	candidateUnits: number,
-	entitiesDetected: number,
-	relationshipsDetected: number,
-	conflictsFound: number
-): string {
+interface RunContext {
+	sources: KnowledgeSourceInput[];
+	candidateUnits: number;
+	entitiesDetected: number;
+	relationshipsDetected: number;
+	relationTypes: string[];
+	conflictsFound: number;
+	retainedForReview: number;
+	ragStrategyName: string;
+	storageTopology: string;
+}
+
+function phaseLogLines(phase: PipelinePhase, ctx: RunContext): string[] {
+	const { sources } = ctx;
 	switch (phase) {
-		case PipelinePhase.INVENTORY:
-			return corpusProfile(sources);
+		case PipelinePhase.INVENTORY: {
+			const lines = [`Clasificando ${sources.length} fuentes por tipo, idioma y calidad…`];
+			for (const source of sources.slice(0, 4)) {
+				lines.push(`${source.name} → ${SOURCE_TYPE_LABELS[source.type]}${source.sizeLabel ? `, ${source.sizeLabel}` : ''}`);
+			}
+			if (sources.length > 4) lines.push(`… y ${sources.length - 4} fuente(s) más`);
+			lines.push('Detectado idioma dominante: español');
+			lines.push(corpusProfile(sources));
+			return lines;
+		}
 		case PipelinePhase.EXTRACTION:
-			return `${candidateUnits} unidades de contenido extraídas con el método adecuado a cada tipo de fuente`;
+			return [
+				'Aplicando extracción por tablas a documentos PDF…',
+				'Aplicando extracción por filas a hojas de cálculo…',
+				'Aplicando extracción por encabezados a Markdown…',
+				'Conservando ubicación de origen (página, fila o sección) por unidad',
+				`${ctx.candidateUnits} unidades de contenido extraídas`
+			];
 		case PipelinePhase.NORMALIZATION:
-			return `Unidades, nombres y formatos unificados en ${candidateUnits} unidades de contenido`;
-		case PipelinePhase.ENTITY_RELATIONS:
-			return `${entitiesDetected} entidades y ${relationshipsDetected} relaciones detectadas, con procedencia trazable`;
+			return [
+				'Unificando unidades de medida (mm, kg, IP, PL/SIL)…',
+				'Normalizando nombres de producto y variantes de type code…',
+				'Resolviendo sinónimos entre ficha técnica y listado de distribuidor…',
+				`${ctx.candidateUnits} unidades normalizadas a un esquema común`
+			];
+		case PipelinePhase.ENTITY_RELATIONS: {
+			const lines = ['Detectando entidades: productos, accesorios y normas aplicables…'];
+			for (const relation of ctx.relationTypes) {
+				lines.push(`Relación candidata encontrada: tipo "${relation}"`);
+			}
+			lines.push(`${ctx.entitiesDetected} entidades y ${ctx.relationshipsDetected} relaciones con procedencia trazada`);
+			return lines;
+		}
 		case PipelinePhase.RAG_STRATEGY:
-			return 'Estrategia de recuperación y topología de almacenamiento seleccionadas según la forma del corpus';
+			return [
+				'Evaluando la forma del corpus (texto libre vs. datos tabulares)…',
+				`Estrategia seleccionada: ${ctx.ragStrategyName}`,
+				`Topología de almacenamiento: ${ctx.storageTopology}`
+			];
 		case PipelinePhase.INDEXING:
-			return `Índice construido sobre ${candidateUnits} unidades de contenido`;
-		case PipelinePhase.VALIDATION:
-			return conflictsFound > 0
-				? `${conflictsFound} hechos con fuentes discrepantes — marcados, no resueltos automáticamente`
-				: 'Sin discrepancias entre fuentes';
+			return [
+				'Construyendo índice de recuperación…',
+				'Indexando relaciones en el grafo de entidades…',
+				`Índice listo sobre ${ctx.candidateUnits} unidades de contenido`
+			];
+		case PipelinePhase.VALIDATION: {
+			const lines = ['Verificando cobertura de citación por hecho…'];
+			if (ctx.conflictsFound > 0) {
+				lines.push(
+					`⚠ ${ctx.conflictsFound} hecho(s) con fuentes discrepantes — se marcan, no se resuelven automáticamente`
+				);
+			} else {
+				lines.push('Sin discrepancias entre las fuentes suministradas');
+			}
+			lines.push('Calculando confianza por hecho…');
+			if (ctx.retainedForReview > 0) {
+				lines.push(`${ctx.retainedForReview} unidad(es) bajo el umbral de confianza, retenidas para revisión`);
+			}
+			return lines;
+		}
 	}
 }
 
 // TODO: reemplazar por una conexión real al pipeline (contra el boundary
 // Usuario1 -> Usuario3 descrito en analisis/agentsprint/03_contracts/INTERFACES.md)
-// cuando exista el backend. Por ahora simula el avance fase por fase para poder
-// construir la retroalimentación visual del pipeline.
+// cuando exista el backend. Por ahora simula el avance fase por fase, línea por
+// línea, para poder construir la retroalimentación visual del pipeline.
 export async function simulatePipelineRun(
 	sources: KnowledgeSourceInput[],
-	onPhaseUpdate: (update: PipelinePhaseState) => void
+	onPhaseUpdate: (update: PipelinePhaseState) => void,
+	onLogLine: (line: PipelineLogLine) => void
 ): Promise<PipelineRunResult> {
 	const startedAt = new Date().toISOString();
 	const candidateUnits = randomBetween(sources.length * 12, sources.length * 22);
 	const entitiesDetected = randomBetween(sources.length * 4, sources.length * 9);
 	const relationshipsDetected = randomBetween(entitiesDetected, Math.round(entitiesDetected * 1.6));
-	let conflictsFound = 0;
-	let retainedForReview = 0;
-
-	for (const phase of PIPELINE_PHASE_ORDER) {
-		onPhaseUpdate({ phase, status: PhaseStatus.RUNNING, progress: 0, startedAt: new Date().toISOString() });
-
-		const steps = 4;
-		for (let step = 1; step <= steps; step++) {
-			await delay(120 + randomBetween(0, 140));
-			onPhaseUpdate({ phase, status: PhaseStatus.RUNNING, progress: Math.round((step / steps) * 100) });
-		}
-
-		if (phase === PipelinePhase.VALIDATION) {
-			conflictsFound = randomBetween(0, Math.max(1, Math.round(sources.length * 0.6)));
-			retainedForReview = randomBetween(0, Math.max(1, Math.round(candidateUnits * 0.05)));
-		}
-
-		onPhaseUpdate({
-			phase,
-			status: PhaseStatus.DONE,
-			progress: 100,
-			metric: phaseMetric(
-				phase,
-				sources,
-				candidateUnits,
-				entitiesDetected,
-				relationshipsDetected,
-				conflictsFound
-			),
-			finishedAt: new Date().toISOString()
-		});
-	}
+	const conflictsFound = randomBetween(0, Math.max(1, Math.round(sources.length * 0.6)));
+	const retainedForReview = randomBetween(0, Math.max(1, Math.round(candidateUnits * 0.05)));
 
 	const hasApiSource = sources.some((source) => source.type === SourceType.API);
 	const hasTabularSource = sources.some((source) => source.type === SourceType.EXCEL);
-
 	const ragStrategy =
 		hasApiSource || hasTabularSource
 			? {
@@ -129,6 +162,31 @@ export async function simulatePipelineRun(
 					rationale:
 						'El corpus es homogéneo (solo documentos de texto libre), así que un índice vectorial simple cubre la mayoría de las consultas sin costo adicional de mantener un grafo.'
 				};
+
+	const ctx: RunContext = {
+		sources,
+		candidateUnits,
+		entitiesDetected,
+		relationshipsDetected,
+		relationTypes: RELATION_TYPES.slice(0, randomBetween(3, RELATION_TYPES.length)),
+		conflictsFound,
+		retainedForReview,
+		ragStrategyName: ragStrategy.name,
+		storageTopology: ragStrategy.storageTopology
+	};
+
+	for (const phase of PIPELINE_PHASE_ORDER) {
+		onPhaseUpdate({ phase, status: PhaseStatus.RUNNING, progress: 0, startedAt: new Date().toISOString() });
+
+		const lines = phaseLogLines(phase, ctx);
+		for (let i = 0; i < lines.length; i++) {
+			await thinkingDelay();
+			onLogLine({ id: nextLineId(), phase, text: lines[i], timestamp: new Date().toISOString() });
+			onPhaseUpdate({ phase, status: PhaseStatus.RUNNING, progress: Math.round(((i + 1) / lines.length) * 100) });
+		}
+
+		onPhaseUpdate({ phase, status: PhaseStatus.DONE, progress: 100, finishedAt: new Date().toISOString() });
+	}
 
 	const validationChecks: ValidationCheck[] = [
 		{
@@ -155,11 +213,7 @@ export async function simulatePipelineRun(
 	];
 
 	const validationStatus =
-		conflictsFound > 0
-			? ValidationStatus.CONDITIONAL
-			: retainedForReview > 0
-				? ValidationStatus.CONDITIONAL
-				: ValidationStatus.READY;
+		conflictsFound > 0 || retainedForReview > 0 ? ValidationStatus.CONDITIONAL : ValidationStatus.READY;
 
 	const nextAction =
 		validationStatus === ValidationStatus.READY
@@ -176,7 +230,7 @@ export async function simulatePipelineRun(
 			'Extracción por tablas para fichas técnicas en PDF, por filas para catálogos en Excel y por encabezados para Markdown; toda unidad conserva su ubicación de origen.',
 		entitiesDetected,
 		relationshipsDetected,
-		relationTypes: RELATION_TYPES.slice(0, randomBetween(3, RELATION_TYPES.length)),
+		relationTypes: ctx.relationTypes,
 		ragStrategy,
 		validationStatus,
 		validationChecks,
