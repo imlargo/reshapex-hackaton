@@ -1,5 +1,6 @@
 import HomeIcon from '@lucide/svelte/icons/house';
 import BrainIcon from '@lucide/svelte/icons/brain';
+import PresentationIcon from '@lucide/svelte/icons/presentation';
 import SettingsIcon from '@lucide/svelte/icons/settings';
 import ShieldIcon from '@lucide/svelte/icons/shield';
 import { PermissionKey } from './permissions';
@@ -35,6 +36,13 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		to: '/knowledge/ingest',
 		group: NavigationGroup.Main,
 		requiredPermissions: [PermissionKey.Knowledge]
+	},
+	{
+		title: 'Producto',
+		icon: PresentationIcon,
+		to: '/about',
+		group: NavigationGroup.Main,
+		requiredPermissions: [PermissionKey.Dashboard]
 	},
 	{
 		title: 'Settings',
