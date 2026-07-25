@@ -1,0 +1,302 @@
+{
+  "pdfs": [
+    {
+      "dest": "pdfs/product_overviews/productoverview_W4_g577401_en.pdf",
+      "url": "https://www.sick.com/media/productoverview/1/01/401/productoverview_W4_g577401_en.pdf",
+      "status": "ok",
+      "info": 2259460
+    },
+    {
+      "dest": "pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf",
+      "url": "https://www.sick.com/media/pdf/7/17/117/dataSheet_WTB4S-3N2131_1042061_en.pdf",
+      "status": "ok",
+      "info": 481121
+    },
+    {
+      "dest": "pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf",
+      "url": "https://www.sick.com/media/pdf/3/03/203/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf",
+      "status": "ok",
+      "info": 620738
+    },
+    {
+      "dest": "pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf",
+      "url": "https://www.sick.com/media/pdf/5/45/145/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf",
+      "status": "ok",
+      "info": 1034250
+    },
+    {
+      "dest": "pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf",
+      "url": "https://www.sick.com/media/pdf/7/67/567/dataSheet_SICK-AssetHub_p654567_en.pdf",
+      "status": "ok",
+      "info": 830858
+    },
+    {
+      "dest": "pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/97/697/technical_information_photoelectric_sensors_sick_smart_sensors_io_link_en_im0077697.pdf",
+      "status": "ok",
+      "info": 2569700
+    },
+    {
+      "dest": "pdfs/technical_information/technical_information_pss_IM0079055_en.pdf",
+      "url": "https://www.sick.com/media/docs/5/55/055/technical_information_pss_en_im0079055.pdf",
+      "status": "ok",
+      "info": 4201177
+    },
+    {
+      "dest": "pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf",
+      "url": "https://www.sick.com/media/docs/3/23/623/technical_information_data_format_description_en_im0104623.pdf",
+      "status": "ok",
+      "info": 1970549
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf",
+      "url": "https://www.sick.com/media/docs/4/24/724/operating_instructions_sig200_rest_api_en_im0084724.pdf",
+      "status": "ok",
+      "info": 6233758
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf",
+      "url": "https://www.sick.com/media/docs/2/62/162/operating_instructions_sensor_integration_gateway_sig200_profinet_en_im0086162.pdf",
+      "status": "ok",
+      "info": 7628676
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/87/887/operating_instructions_sensor_integration_gateway_sig200_ethernet_iptm_r_en_im0090887.pdf",
+      "status": "ok",
+      "info": 6606208
+    },
+    {
+      "dest": "pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf",
+      "url": "https://www.sick.com/media/docs/8/78/678/special_information_guide_for_safe_machinery_en_im0014678.pdf",
+      "status": "ok",
+      "info": 36718782
+    },
+    {
+      "dest": "pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/77/177/product_segment_overview_machine_vision_2d_vision_3d_vision_sensor_integration_machine_en_im0102177.pdf",
+      "status": "ok",
+      "info": 2913788
+    },
+    {
+      "dest": "pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/67/967/technical_information_css_csx_io_link_en_im0110967.pdf",
+      "status": "ok",
+      "info": 1365383
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_SIG350_Profinet_IM0101468_en.pdf",
+      "url": "https://www.sick.com/media/docs/8/68/468/operating_instructions_sig350_profinet_sensor_integration_gateway_en_im0101468.pdf",
+      "status": "ok",
+      "info": 4773622
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_TIM3xx_2D_LiDAR_IM0097598_en.pdf",
+      "url": "https://www.sick.com/media/docs/8/98/598/operating_instructions_tim3xx_2d_lidar_sensors_en_im0097598.pdf",
+      "status": "ok",
+      "info": 5463947
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_Safety_Designer_IM0064028_en.pdf",
+      "url": "https://www.sick.com/media/docs/8/28/028/operating_instructions_safety_designer_configuration_software_en_im0064028.pdf",
+      "status": "ok",
+      "info": 1912456
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_NanoScan3_IO_IM0087137_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/37/137/operating_instructions_nanoscan3_i_o_en_im0087137.pdf",
+      "status": "ok",
+      "info": 12415175
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_AFS_AFM60_Profinet_IM0047099_en.pdf",
+      "url": "https://www.sick.com/media/docs/9/99/099/operating_instructions_afs_afm60_profinet_absolute_encoder_en_im0047099.pdf",
+      "status": "ok",
+      "info": 2737725
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_SIM2500_IM0097329_en.pdf",
+      "url": "https://www.sick.com/media/docs/9/29/329/operating_instructions_sim2500_sensor_integration_machine_en_im0097329.pdf",
+      "status": "ok",
+      "info": 3507870
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_FlexChain_IM0081347_en.pdf",
+      "url": "https://www.sick.com/media/docs/7/47/347/operating_instructions_flexchain_en_im0081347.pdf",
+      "status": "ok",
+      "info": 10768182
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_MultiScan165_IM0110273_en.pdf",
+      "url": "https://www.sick.com/media/docs/3/73/273/operating_instructions_multiscan165_en_im0110273.pdf",
+      "status": "ok",
+      "info": 13077622
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_InspectorP64x_65x_IM0068779_en.pdf",
+      "url": "https://www.sick.com/media/docs/9/79/779/operating_instructions_inspectorp64x_65x_en_im0068779.pdf",
+      "status": "ok",
+      "info": 8453423
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_OD2000_IM0099818_es.pdf",
+      "url": "https://www.sick.com/media/docs/8/18/818/operating_instructions_od2000_displacement_measurement_sensor_es_im0099818.pdf",
+      "status": "ok",
+      "info": 2528432
+    },
+    {
+      "dest": "pdfs/operating_instructions/operating_instructions_MicroScan3_Profinet_S7_IM0096363_en.pdf",
+      "url": "https://www.sick.com/media/docs/3/63/363/technical_information_microscan3_profinet_simatic_step_7_en_im0096363.pdf",
+      "status": "ok",
+      "info": 663311
+    }
+  ],
+  "kb": [
+    {
+      "code": "KA-06561",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-06561",
+      "status": "ok",
+      "info": 104393
+    },
+    {
+      "code": "KA-07774",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-07774",
+      "status": "ok",
+      "info": 95490
+    },
+    {
+      "code": "KA-08408",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-08408",
+      "status": "ok",
+      "info": 68957
+    },
+    {
+      "code": "KA-08497",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-08497",
+      "status": "ok",
+      "info": 99162
+    },
+    {
+      "code": "KA-08582",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-08582",
+      "status": "ok",
+      "info": 78976
+    },
+    {
+      "code": "KA-09345",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09345",
+      "status": "ok",
+      "info": 73019
+    },
+    {
+      "code": "KA-09348",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09348",
+      "status": "ok",
+      "info": 82397
+    },
+    {
+      "code": "KA-09388",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09388",
+      "status": "ok",
+      "info": 115243
+    },
+    {
+      "code": "KA-09438",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09438",
+      "status": "ok",
+      "info": 114663
+    },
+    {
+      "code": "KA-09480",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09480",
+      "status": "ok",
+      "info": 128259
+    },
+    {
+      "code": "KA-09513",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09513",
+      "status": "ok",
+      "info": 123213
+    },
+    {
+      "code": "KA-09555",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09555",
+      "status": "ok",
+      "info": 104834
+    },
+    {
+      "code": "KA-09640",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09640",
+      "status": "ok",
+      "info": 111118
+    },
+    {
+      "code": "KA-09665",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09665",
+      "status": "ok",
+      "info": 94413
+    },
+    {
+      "code": "KA-09948",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09948",
+      "status": "ok",
+      "info": 60701
+    },
+    {
+      "code": "KA-09975",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-09975",
+      "status": "ok",
+      "info": 61592
+    },
+    {
+      "code": "KA-10290",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-10290",
+      "status": "ok",
+      "info": 82987
+    },
+    {
+      "code": "KA-10726",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-10726",
+      "status": "ok",
+      "info": 81861
+    },
+    {
+      "code": "KA-10741",
+      "url": "https://support.sick.com/sick-knowledgebase/article/?code=KA-10741",
+      "status": "ok",
+      "info": 81056
+    }
+  ],
+  "github": [
+    {
+      "dest": "github/SICK-Sensor-Starter-Kits_README.md",
+      "url": "https://raw.githubusercontent.com/SICKAG/SICK-Sensor-Starter-Kits/main/README.md",
+      "status": "fail",
+      "info": "unknown"
+    },
+    {
+      "dest": "github/SICK-Sensor-Starter-Kits_mkdocs.yml",
+      "url": "https://raw.githubusercontent.com/SICKAG/SICK-Sensor-Starter-Kits/main/mkdocs.yml",
+      "status": "ok",
+      "info": 2789
+    },
+    {
+      "dest": "github/SICK-Solution-Hackathon_README.md",
+      "url": "https://raw.githubusercontent.com/SICKAG/SICK-Solution-Hackathon/main/README.md",
+      "status": "fail",
+      "info": "curl: (22) The requested URL returned error: 404\n"
+    },
+    {
+      "dest": "github/SICK-AppSpace-SDK-Docs_README.md",
+      "url": "https://raw.githubusercontent.com/SICKAG/SICK-AppSpace-SDK-Docs/main/README.md",
+      "status": "fail",
+      "info": "curl: (22) The requested URL returned error: 404\n"
+    },
+    {
+      "dest": "github/SICK-App-Designer-Docs_README.md",
+      "url": "https://raw.githubusercontent.com/SICKAG/SICK-App-Designer-Docs/main/README.md",
+      "status": "fail",
+      "info": "curl: (22) The requested URL returned error: 404\n"
+    }
+  ]
+}

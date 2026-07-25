@@ -1,0 +1,42 @@
+{
+  "corpus_id": "SICK-RESEARCH-2026-07-25",
+  "brand": "SICK AG",
+  "curator": "Jeronimo0228",
+  "purpose": "ReshapeX Hackathon semantic processing test corpus",
+  "layers": [
+    "catalog",
+    "product_id",
+    "support_kb",
+    "github",
+    "cloud_services",
+    "desktop_tools"
+  ],
+  "statistics": {
+    "pdf_count": 25,
+    "kb_article_count": 19,
+    "github_repo_count": 57,
+    "total_size_approx_mb": 137
+  },
+  "pdfs": [
+    {"id": "PDF-001", "category": "product_overview", "file": "pdfs/product_overviews/productoverview_W4_g577401_en.pdf", "im": null, "sku": "W4", "url": "https://www.sick.com/media/productoverview/1/01/401/productoverview_W4_g577401_en.pdf"},
+    {"id": "PDF-002", "category": "datasheet", "file": "pdfs/datasheets/dataSheet_WTB4S-3N2131_1042061_en.pdf", "im": null, "sku": "WTB4S-3N2131", "order_no": "1042061", "url": "https://www.sick.com/media/pdf/7/17/117/dataSheet_WTB4S-3N2131_1042061_en.pdf"},
+    {"id": "PDF-003", "category": "datasheet", "file": "pdfs/datasheets/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf", "im": null, "sku": "WTB4FP-1G312120ZZZ", "order_no": "1120711", "url": "https://www.sick.com/media/pdf/3/03/203/dataSheet_WTB4FP-1G312120ZZZ_1120711_en.pdf"},
+    {"id": "PDF-004", "category": "datasheet", "file": "pdfs/datasheets/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf", "im": null, "sku": "WTB4FT-31311120ZZZ", "order_no": "1113180", "url": "https://www.sick.com/media/pdf/5/45/145/dataSheet_WTB4FT-31311120ZZZ_1113180_en.pdf"},
+    {"id": "PDF-005", "category": "datasheet", "file": "pdfs/datasheets/dataSheet_SICK-AssetHub_p654567_en.pdf", "im": null, "sku": "SICK-AssetHub", "order_no": "p654567", "url": "https://www.sick.com/media/pdf/7/67/567/dataSheet_SICK-AssetHub_p654567_en.pdf"},
+    {"id": "PDF-006", "category": "technical_information", "file": "pdfs/technical_information/technical_information_photoelectric_sensors_io_link_IM0077697_en.pdf", "im": "IM0077697", "url": "https://www.sick.com/media/docs/7/97/697/technical_information_photoelectric_sensors_sick_smart_sensors_io_link_en_im0077697.pdf"},
+    {"id": "PDF-007", "category": "technical_information", "file": "pdfs/technical_information/technical_information_pss_IM0079055_en.pdf", "im": "IM0079055", "url": "https://www.sick.com/media/docs/5/55/055/technical_information_pss_en_im0079055.pdf"},
+    {"id": "PDF-008", "category": "technical_information", "file": "pdfs/technical_information/technical_information_data_format_description_IM0104623_en.pdf", "im": "IM0104623", "url": "https://www.sick.com/media/docs/3/23/623/technical_information_data_format_description_en_im0104623.pdf"},
+    {"id": "PDF-009", "category": "technical_information", "file": "pdfs/technical_information/technical_information_css_csx_io_link_IM0110967_en.pdf", "im": "IM0110967", "url": "https://www.sick.com/media/docs/7/67/967/technical_information_css_csx_io_link_en_im0110967.pdf"},
+    {"id": "PDF-010", "category": "operating_instructions", "file": "pdfs/operating_instructions/operating_instructions_SIG200_REST_API_IM0084724_en.pdf", "im": "IM0084724", "product": "SIG200", "url": "https://www.sick.com/media/docs/4/24/724/operating_instructions_sig200_rest_api_en_im0084724.pdf"},
+    {"id": "PDF-011", "category": "operating_instructions", "file": "pdfs/operating_instructions/operating_instructions_SIG200_Profinet_IM0086162_en.pdf", "im": "IM0086162", "product": "SIG200", "protocol": "Profinet", "url": "https://www.sick.com/media/docs/2/62/162/operating_instructions_sensor_integration_gateway_sig200_profinet_en_im0086162.pdf"},
+    {"id": "PDF-012", "category": "operating_instructions", "file": "pdfs/operating_instructions/operating_instructions_SIG200_EthernetIP_IM0090887_en.pdf", "im": "IM0090887", "product": "SIG200", "protocol": "EtherNet/IP", "url": "https://www.sick.com/media/docs/7/87/887/operating_instructions_sensor_integration_gateway_sig200_ethernet_iptm_r_en_im0090887.pdf"},
+    {"id": "PDF-013", "category": "guide", "file": "pdfs/guides/guide_for_safe_machinery_IM0014678_en.pdf", "im": "IM0014678", "url": "https://www.sick.com/media/docs/8/78/678/special_information_guide_for_safe_machinery_en_im0014678.pdf"},
+    {"id": "PDF-014", "category": "product_overview", "file": "pdfs/product_overviews/product_segment_overview_machine_vision_IM0102177_en.pdf", "im": "IM0102177", "url": "https://www.sick.com/media/docs/7/77/177/product_segment_overview_machine_vision_2d_vision_3d_vision_sensor_integration_machine_en_im0102177.pdf"}
+  ],
+  "knowledge_base_articles": "See knowledge_base/INDEX.json",
+  "github": {
+    "org": "SICKAG",
+    "inventory_file": "github/SICKAG_repositories.json",
+    "starter_kits_docs": "https://sickag.github.io/SICK-Sensor-Starter-Kits"
+  }
+}
