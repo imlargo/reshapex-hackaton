@@ -1,19 +1,22 @@
 <script lang="ts">
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import DecisionCard from './DecisionCard.svelte';
+	import RelationsGraph from './RelationsGraph.svelte';
+	import ConflictCard from './ConflictCard.svelte';
 	import { PIPELINE_PHASE_LABELS } from '$lib/config';
 	import { PhaseStatus, PipelinePhase } from '$lib/types/knowledge';
 	import type { PipelinePhaseState } from '$lib/types/knowledge';
-	import type { PipelineLogLine } from '../types';
+	import type { PipelineTraceEvent } from '../types';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { fade, slide } from 'svelte/transition';
 
 	let {
-		lines,
+		events,
 		phases
 	}: {
-		lines: PipelineLogLine[];
+		events: PipelineTraceEvent[];
 		phases: PipelinePhaseState[];
 	} = $props();
 
@@ -28,13 +31,13 @@
 		[PipelinePhase.VALIDATION]: OrbState.SOLVING
 	};
 
-	// Agrupa líneas consecutivas por fase para poder colapsarlas por separado.
+	// Agrupa eventos consecutivos por fase para poder colapsarlos por separado.
 	const grouped = $derived.by(() => {
-		const groups: { phase: PipelinePhase; items: PipelineLogLine[] }[] = [];
-		for (const line of lines) {
+		const groups: { phase: PipelinePhase; items: PipelineTraceEvent[] }[] = [];
+		for (const event of events) {
 			const current = groups.at(-1);
-			if (current && current.phase === line.phase) current.items.push(line);
-			else groups.push({ phase: line.phase, items: [line] });
+			if (current && current.phase === event.phase) current.items.push(event);
+			else groups.push({ phase: event.phase, items: [event] });
 		}
 		return groups;
 	});
@@ -58,7 +61,7 @@
 
 <div class="flex flex-col gap-4">
 	{#each grouped as group (group.phase)}
-		<div class="flex flex-col gap-1.5">
+		<div class="flex flex-col gap-2">
 			<button
 				type="button"
 				class="flex w-fit items-center gap-2 rounded-md py-0.5 text-left hover:opacity-80"
@@ -80,11 +83,26 @@
 			</button>
 
 			{#if isOpen(group.phase)}
-				<div transition:slide={{ duration: 200 }} class="flex flex-col gap-1 pl-7">
-					{#each group.items as line (line.id)}
-						<div in:fade={{ duration: 220 }} class="flex items-start gap-2 text-sm leading-relaxed">
-							<ChevronRightIcon class="mt-0.5 size-3 shrink-0 text-muted-foreground" />
-							<span class="text-foreground/90">{line.text}</span>
+				<div transition:slide={{ duration: 200 }} class="flex flex-col gap-2 pl-7">
+					{#each group.items as event (event.id)}
+						<div in:fade={{ duration: 220 }}>
+							{#if event.kind === 'log'}
+								<div class="flex items-start gap-2 text-sm leading-relaxed">
+									<ChevronRightIcon class="mt-0.5 size-3 shrink-0 text-muted-foreground" />
+									<span class="text-foreground/90">{event.text}</span>
+								</div>
+							{:else if event.kind === 'decision'}
+								<DecisionCard
+									question={event.question}
+									options={event.options}
+									chosen={event.chosen}
+									rationale={event.rationale}
+								/>
+							{:else if event.kind === 'relations'}
+								<RelationsGraph samples={event.samples} />
+							{:else if event.kind === 'conflict'}
+								<ConflictCard sample={event.sample} />
+							{/if}
 						</div>
 					{/each}
 				</div>

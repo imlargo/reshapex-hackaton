@@ -20,15 +20,15 @@
 	let bottomAnchor: HTMLDivElement | undefined = $state();
 
 	$effect(() => {
-		// Se re-ejecuta con cada línea nueva o al llegar el resultado final.
-		store.logLines.length;
+		// Se re-ejecuta con cada evento nuevo o al llegar el resultado final.
+		store.traceEvents.length;
 		store.result;
 		bottomAnchor?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	});
 </script>
 
-<div class="relative isolate flex flex-col gap-6">
-	<div class="pointer-events-none fixed inset-0 -z-10 opacity-40 grayscale">
+<div class="relative flex flex-col gap-6">
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-10 grayscale">
 		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
 	</div>
 
@@ -87,7 +87,7 @@
 					</div>
 				</ChatBubble>
 
-				<ReasoningTrace lines={store.logLines} phases={store.phases} />
+				<ReasoningTrace events={store.traceEvents} phases={store.phases} />
 
 				{#if store.result}
 					<PipelineResultSummary result={store.result} onReset={() => store.reset()} />
