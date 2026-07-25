@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PageHeader, AsyncView, StatTile, RadialProgress } from '$lib/components/common';
+	import { PageHeader, AsyncView, StatTile, RadialProgress, Iridescence } from '$lib/components/common';
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -12,19 +12,34 @@
 	import { formatPercent } from '$lib/utils/number';
 	import { FactStatus } from '$lib/types/knowledge';
 	import DatabaseIcon from '@lucide/svelte/icons/database';
-	import ShieldCheckIcon from '@lucide/svelte/icons/shield-check';
 	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
 	import ClockIcon from '@lucide/svelte/icons/clock';
 	import UploadIcon from '@lucide/svelte/icons/upload';
+	import { fade } from 'svelte/transition';
 
 	const store = new DashboardStore();
 
 	$effect(() => {
 		store.load();
 	});
+
+	function conflictInsight(count: number): string {
+		return count > 0
+			? `${count} hecho${count === 1 ? '' : 's'} en conflicto — nunca se promedian, quedan escalados a revisión.`
+			: 'Sin conflictos activos entre fuentes.';
+	}
+
+	function confidenceInsight(avgConfidence: number, conflicts: number): string {
+		if (conflicts > 0) return 'Baja por los hechos en conflicto que todavía no se resolvieron.';
+		return avgConfidence >= 0.85 ? 'Sobre hechos verificados, sin discrepancias pendientes.' : 'Sube a medida que se resuelven las revisiones pendientes.';
+	}
 </script>
 
-<div class="flex flex-col gap-6">
+<div class="relative flex flex-col gap-6">
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-20 grayscale">
+		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
+	</div>
+
 	<div class="flex items-start gap-4">
 		<ThinkingOrb state={OrbState.WORKING} size={64} class="mt-1 hidden sm:block" />
 		<PageHeader
@@ -45,7 +60,9 @@
 		{#snippet children()}
 			{#if store.snapshot}
 				{@const snapshot = store.snapshot}
-				<div class="flex flex-col gap-6">
+				{@const conflictCount =
+					snapshot.statusBreakdown.find((s) => s.status === FactStatus.CONFLICT)?.count ?? 0}
+				<div in:fade={{ duration: 220 }} class="flex flex-col gap-6">
 					<section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 						<StatTile
 							title="Hechos totales"
@@ -69,15 +86,15 @@
 									label={formatPercent(snapshot.avgConfidence)}
 									color="var(--success)"
 								/>
-								<p class="text-xs text-muted-foreground">Sobre hechos verificados</p>
+								<p class="text-xs text-muted-foreground">
+									{confidenceInsight(snapshot.avgConfidence, conflictCount)}
+								</p>
 							</Card.Content>
 						</Card.Root>
 
 						<StatTile
 							title="Conflictos activos"
-							value={(
-								snapshot.statusBreakdown.find((s) => s.status === FactStatus.CONFLICT)?.count ?? 0
-							).toLocaleString()}
+							value={conflictCount.toLocaleString()}
 							description="Nunca se resuelven solos"
 							accent="var(--destructive)"
 						>
@@ -99,49 +116,46 @@
 						</StatTile>
 					</section>
 
-					<section class="grid gap-4 lg:grid-cols-3">
-						<Card.Root class="lg:col-span-2">
-							<Card.Header>
-								<Card.Title>Crecimiento de la base de conocimiento</Card.Title>
-								<Card.Description>Hechos publicados por corrida del pipeline</Card.Description>
-							</Card.Header>
-							<Card.Content>
+					<div class="overflow-hidden rounded-2xl border bg-card">
+						<div class="grid divide-y lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+							<div class="flex flex-col gap-3 p-5 lg:col-span-2">
+								<div>
+									<p class="font-medium">Crecimiento de la base de conocimiento</p>
+									<p class="text-xs text-muted-foreground">Hechos publicados por corrida del pipeline</p>
+								</div>
 								<FactsTrendChart data={snapshot.factsTrend} />
-							</Card.Content>
-						</Card.Root>
-
-						<Card.Root>
-							<Card.Header>
-								<Card.Title>Composición por estado</Card.Title>
-								<Card.Description>Verificado, en conflicto y sin revisar</Card.Description>
-							</Card.Header>
-							<Card.Content>
+							</div>
+							<div class="flex flex-col gap-3 p-5">
+								<div>
+									<p class="font-medium">Composición por estado</p>
+									<p class="text-xs text-muted-foreground">Verificado, en conflicto y sin revisar</p>
+								</div>
 								<FactsStatusBar breakdown={snapshot.statusBreakdown} />
-							</Card.Content>
-						</Card.Root>
-					</section>
+								<p class="mt-auto border-t pt-2 text-xs text-muted-foreground">
+									{conflictInsight(conflictCount)}
+								</p>
+							</div>
+						</div>
+					</div>
 
-					<section class="grid gap-4 lg:grid-cols-3">
-						<Card.Root>
-							<Card.Header>
-								<Card.Title>Fuentes ingeridas</Card.Title>
-								<Card.Description>{snapshot.sourcesIngested} fuentes por tipo</Card.Description>
-							</Card.Header>
-							<Card.Content>
+					<div class="overflow-hidden rounded-2xl border bg-card">
+						<div class="grid divide-y lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+							<div class="flex flex-col gap-3 p-5">
+								<div>
+									<p class="font-medium">Fuentes ingeridas</p>
+									<p class="text-xs text-muted-foreground">{snapshot.sourcesIngested} fuentes por tipo</p>
+								</div>
 								<SourcesBarChart breakdown={snapshot.sourceBreakdown} />
-							</Card.Content>
-						</Card.Root>
-
-						<Card.Root class="lg:col-span-2">
-							<Card.Header>
-								<Card.Title>Actividad reciente</Card.Title>
-								<Card.Description>Conflictos, escalaciones y publicaciones</Card.Description>
-							</Card.Header>
-							<Card.Content>
+							</div>
+							<div class="flex flex-col gap-3 p-5 lg:col-span-2">
+								<div>
+									<p class="font-medium">Actividad reciente</p>
+									<p class="text-xs text-muted-foreground">Conflictos, escalaciones y publicaciones</p>
+								</div>
 								<ActivityFeed events={snapshot.recentActivity} />
-							</Card.Content>
-						</Card.Root>
-					</section>
+							</div>
+						</div>
+					</div>
 				</div>
 			{/if}
 		{/snippet}
