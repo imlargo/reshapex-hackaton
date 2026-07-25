@@ -40,7 +40,7 @@ El frontend llama rutas server-side propias:
 Variables server-only en `frontend/.env`:
 
 - `KNOWLEDGE_API_URL` — default `http://127.0.0.1:8001`
-- `KNOWLEDGE_CORPUS_DIR` — default `../contents` (relativo al cwd de la API en `back/`)
+- `KNOWLEDGE_CORPUS_DIR` — default `contents` (dentro de `back/`, 57 fuentes SICK)
 
 ## Rama
 

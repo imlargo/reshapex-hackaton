@@ -25,5 +25,5 @@ else
   exit 1
 fi
 
-export KNOWLEDGE_CORPUS_DIR="../contents"
+export KNOWLEDGE_CORPUS_DIR="contents"
 exec "$PYTHON" -m uvicorn agentsprint_starter.service.http:app --host 0.0.0.0 --port 8001
