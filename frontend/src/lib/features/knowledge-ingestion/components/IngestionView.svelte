@@ -1,36 +1,40 @@
 <script lang="ts">
-	import { PageHeader, ChatBubble } from '$lib/components/common';
+	import { PageHeader, ChatBubble, Iridescence } from '$lib/components/common';
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { IngestionStore } from '../stores/ingestion.svelte';
 	import SourceIntake from './SourceIntake.svelte';
-	import PhaseMessage from './PhaseMessage.svelte';
+	import ReasoningTrace from './ReasoningTrace.svelte';
+	import PipelineStageTracker from './PipelineStageTracker.svelte';
 	import PipelineResultSummary from './PipelineResultSummary.svelte';
 	import { PhaseStatus } from '$lib/types/knowledge';
 	import { SOURCE_TYPE_LABELS } from '$lib/config';
 	import SendIcon from '@lucide/svelte/icons/send';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
-	import { fade } from 'svelte/transition';
 
 	const store = new IngestionStore();
 
 	const hasStarted = $derived(store.phases.some((phase) => phase.status !== PhaseStatus.PENDING));
-	const activePhases = $derived(store.phases.filter((phase) => phase.status !== PhaseStatus.PENDING));
 
 	let bottomAnchor: HTMLDivElement | undefined = $state();
 
 	$effect(() => {
-		// Se re-ejecuta con cada fase nueva o al llegar el resultado final.
-		activePhases.length;
+		// Se re-ejecuta con cada línea nueva o al llegar el resultado final.
+		store.logLines.length;
 		store.result;
 		bottomAnchor?.scrollIntoView({ behavior: 'smooth', block: 'end' });
 	});
 </script>
 
-<div class="mx-auto flex w-full max-w-3xl flex-col gap-6">
+<div class="relative isolate flex flex-col gap-6">
+	<div class="pointer-events-none fixed inset-0 -z-10 opacity-40 grayscale">
+		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
+	</div>
+
 	<PageHeader
 		title="Crear base de conocimiento"
-		description="Sube fuentes y conversa con el pipeline mientras avanza fase por fase, en vivo."
+		description="Sube fuentes y mira al agente avanzar fase por fase, en vivo."
 	>
 		{#snippet actions()}
 			{#if hasStarted}
@@ -42,62 +46,73 @@
 		{/snippet}
 	</PageHeader>
 
-	<div class="flex flex-col gap-5">
-		<ChatBubble role="agent">
-			{#snippet avatar()}
-				<ThinkingOrb state={OrbState.LISTENING} size={20} />
-			{/snippet}
-			<p>
-				Cuéntame qué fuentes quieres incorporar: archivos PDF, Excel o Markdown, o un endpoint de
-				API. Cuando estés listo, envíalas y te muestro cada fase del pipeline a medida que avanza.
-			</p>
-		</ChatBubble>
+	<div class="flex flex-col gap-6 lg:flex-row lg:items-start">
+		<Card.Root class="lg:sticky lg:top-4 lg:w-64 lg:shrink-0">
+			<Card.Header>
+				<Card.Title class="text-sm">Plan del pipeline</Card.Title>
+				<Card.Description>
+					{store.phases.filter((p) => p.status === PhaseStatus.DONE).length} / {store.phases.length} completadas
+				</Card.Description>
+			</Card.Header>
+			<Card.Content>
+				<PipelineStageTracker phases={store.phases} />
+			</Card.Content>
+		</Card.Root>
 
-		{#if !hasStarted}
+		<div class="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-5">
 			<ChatBubble role="agent">
 				{#snippet avatar()}
 					<ThinkingOrb state={OrbState.LISTENING} size={20} />
 				{/snippet}
-				<SourceIntake {store} />
-				<div class="flex justify-end">
-					<Button size="sm" onclick={() => store.run()} disabled={!store.canRun}>
-						<SendIcon class="size-4" />
-						{store.sources.length > 0
-							? `Procesar ${store.sources.length} fuente${store.sources.length === 1 ? '' : 's'}`
-							: 'Procesar fuentes'}
-					</Button>
-				</div>
-			</ChatBubble>
-		{:else}
-			<ChatBubble role="user">
-				<p class="font-medium">
-					{store.sources.length} fuente{store.sources.length === 1 ? '' : 's'} enviada{store.sources
-						.length === 1
-						? ''
-						: 's'}
+				<p>
+					Cuéntame qué fuentes quieres incorporar: archivos PDF, Excel o Markdown, o un endpoint de
+					API. Cuando estés listo, envíalas y te muestro cada fase a medida que avanza.
 				</p>
-				<div class="flex flex-wrap gap-1.5">
-					{#each store.sources as source (source.id)}
-						<span class="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-xs">
-							{SOURCE_TYPE_LABELS[source.type]} · {source.name}
-						</span>
-					{/each}
-				</div>
 			</ChatBubble>
 
-			{#each activePhases as phase, i (phase.phase)}
-				<div in:fade={{ duration: 180 }}>
-					<PhaseMessage {phase} isLast={i === activePhases.length - 1 && !store.result} />
-				</div>
-			{/each}
+			{#if hasStarted}
+				<ChatBubble role="user">
+					<p class="font-medium">
+						{store.sources.length} fuente{store.sources.length === 1 ? '' : 's'} enviada{store
+							.sources.length === 1
+							? ''
+							: 's'}
+					</p>
+					<div class="flex flex-wrap gap-1.5">
+						{#each store.sources as source (source.id)}
+							<span class="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-xs">
+								{SOURCE_TYPE_LABELS[source.type]} · {source.name}
+							</span>
+						{/each}
+					</div>
+				</ChatBubble>
 
-			{#if store.result}
-				<div in:fade={{ duration: 180 }}>
+				<ReasoningTrace lines={store.logLines} phases={store.phases} />
+
+				{#if store.result}
 					<PipelineResultSummary result={store.result} onReset={() => store.reset()} />
-				</div>
+				{/if}
 			{/if}
-		{/if}
 
-		<div bind:this={bottomAnchor}></div>
+			<div bind:this={bottomAnchor}></div>
+
+			{#if !hasStarted}
+				<Card.Root class="sticky bottom-4 gap-3 py-3 shadow-lg">
+					<Card.Content class="flex flex-col gap-4">
+						<SourceIntake {store} />
+						<div class="flex items-center justify-between border-t pt-3">
+							<p class="text-xs text-muted-foreground">
+								{store.sources.length}
+								{store.sources.length === 1 ? 'fuente lista' : 'fuentes listas'}
+							</p>
+							<Button size="sm" onclick={() => store.run()} disabled={!store.canRun}>
+								<SendIcon class="size-4" />
+								Procesar
+							</Button>
+						</div>
+					</Card.Content>
+				</Card.Root>
+			{/if}
+		</div>
 	</div>
 </div>
