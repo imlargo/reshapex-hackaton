@@ -1,7 +1,7 @@
 import { ViewState } from '$lib/core/helpers/view-state.svelte';
 import { PhaseStatus, SourceType } from '$lib/types/knowledge';
 import type { KnowledgeSourceInput, PipelinePhaseState, PipelineRunResult } from '$lib/types/knowledge';
-import type { PipelineLogLine } from '../types';
+import type { PipelineTraceEvent } from '../types';
 import { PIPELINE_PHASE_ORDER, SOURCE_FILE_EXTENSIONS } from '$lib/config';
 import { formatFileSize } from '$lib/utils/number';
 import { simulatePipelineRun } from '../services/ingestion';
@@ -26,7 +26,7 @@ export class IngestionStore {
 	fileSources: KnowledgeSourceInput[] = $state([]);
 	apiSources: KnowledgeSourceInput[] = $state([]);
 	phases: PipelinePhaseState[] = $state(initialPhases());
-	logLines: PipelineLogLine[] = $state([]);
+	traceEvents: PipelineTraceEvent[] = $state([]);
 	result: PipelineRunResult | null = $state(null);
 	// Se incrementa en reset() para forzar el remount de <FileInput>, que gestiona
 	// su propia lista interna de archivos y no la sincroniza si se limpia por fuera.
@@ -65,7 +65,7 @@ export class IngestionStore {
 		if (this.sources.length === 0) return;
 		this.result = null;
 		this.phases = initialPhases();
-		this.logLines = [];
+		this.traceEvents = [];
 
 		const outcome = await this.view.run(() =>
 			simulatePipelineRun(
@@ -75,8 +75,8 @@ export class IngestionStore {
 						phase.phase === update.phase ? { ...phase, ...update } : phase
 					);
 				},
-				(line) => {
-					this.logLines = [...this.logLines, line];
+				(event) => {
+					this.traceEvents = [...this.traceEvents, event];
 				}
 			)
 		);
@@ -88,7 +88,7 @@ export class IngestionStore {
 		this.fileSources = [];
 		this.apiSources = [];
 		this.phases = initialPhases();
-		this.logLines = [];
+		this.traceEvents = [];
 		this.result = null;
 		this.resetToken += 1;
 		this.view.reset();
