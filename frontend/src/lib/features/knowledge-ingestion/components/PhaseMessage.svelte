@@ -13,13 +13,13 @@
 	// Cada fase "piensa" de una forma distinta — mapeo puramente visual, vive
 	// acá y no en config/domain porque no es un concepto de negocio.
 	const PHASE_ORB_STATE: Record<PipelinePhase, OrbState> = {
-		[PipelinePhase.INGEST]: OrbState.LISTENING,
-		[PipelinePhase.PARSE]: OrbState.SEARCHING,
-		[PipelinePhase.EXTRACT]: OrbState.SOLVING,
-		[PipelinePhase.NORMALIZE]: OrbState.COMPOSING,
-		[PipelinePhase.RECONCILE]: OrbState.SOLVING,
-		[PipelinePhase.VALIDATE]: OrbState.SOLVING,
-		[PipelinePhase.PUBLISH]: OrbState.SHAPING
+		[PipelinePhase.INVENTORY]: OrbState.SEARCHING,
+		[PipelinePhase.EXTRACTION]: OrbState.SOLVING,
+		[PipelinePhase.NORMALIZATION]: OrbState.COMPOSING,
+		[PipelinePhase.ENTITY_RELATIONS]: OrbState.SOLVING,
+		[PipelinePhase.RAG_STRATEGY]: OrbState.SHAPING,
+		[PipelinePhase.INDEXING]: OrbState.COMPOSING,
+		[PipelinePhase.VALIDATION]: OrbState.SOLVING
 	};
 </script>
 
