@@ -1,35 +1,39 @@
 import { PipelinePhase, SourceType, FactStatus } from '$lib/types/knowledge';
 
 // ─── Pipeline phases ──────────────────────────────────────────────────────────
-// Orden fijo de las fases del pipeline de la capa de conocimiento (ver CONTEXT.md).
+// Flujo congelado de 9 etapas — ver analisis/agentsprint/03_contracts/PRIMARY_JOURNEY.md.
+// "Información suministrada" y "Base de conocimiento lista" son el intake y el
+// resultado final (no fases con progreso propio); estas 7 son las intermedias.
 export const PIPELINE_PHASE_ORDER: PipelinePhase[] = [
-	PipelinePhase.INGEST,
-	PipelinePhase.PARSE,
-	PipelinePhase.EXTRACT,
-	PipelinePhase.NORMALIZE,
-	PipelinePhase.RECONCILE,
-	PipelinePhase.VALIDATE,
-	PipelinePhase.PUBLISH
+	PipelinePhase.INVENTORY,
+	PipelinePhase.EXTRACTION,
+	PipelinePhase.NORMALIZATION,
+	PipelinePhase.ENTITY_RELATIONS,
+	PipelinePhase.RAG_STRATEGY,
+	PipelinePhase.INDEXING,
+	PipelinePhase.VALIDATION
 ];
 
 export const PIPELINE_PHASE_LABELS: Record<PipelinePhase, string> = {
-	[PipelinePhase.INGEST]: 'Ingesta',
-	[PipelinePhase.PARSE]: 'Parseo',
-	[PipelinePhase.EXTRACT]: 'Extracción',
-	[PipelinePhase.NORMALIZE]: 'Normalización',
-	[PipelinePhase.RECONCILE]: 'Reconciliación',
-	[PipelinePhase.VALIDATE]: 'Validación',
-	[PipelinePhase.PUBLISH]: 'Publicación'
+	[PipelinePhase.INVENTORY]: 'Inventario y clasificación',
+	[PipelinePhase.EXTRACTION]: 'Extracción especializada',
+	[PipelinePhase.NORMALIZATION]: 'Normalización',
+	[PipelinePhase.ENTITY_RELATIONS]: 'Entidades y relaciones',
+	[PipelinePhase.RAG_STRATEGY]: 'Estrategia RAG y almacenamiento',
+	[PipelinePhase.INDEXING]: 'Indexación',
+	[PipelinePhase.VALIDATION]: 'Validación'
 };
 
 export const PIPELINE_PHASE_DESCRIPTIONS: Record<PipelinePhase, string> = {
-	[PipelinePhase.INGEST]: 'Registra cada archivo, API o página tal como llega, sin transformarla.',
-	[PipelinePhase.PARSE]: 'Convierte cada fuente a texto y estructura legible.',
-	[PipelinePhase.EXTRACT]: 'Identifica hechos candidatos y guarda su procedencia.',
-	[PipelinePhase.NORMALIZE]: 'Unifica unidades, nombres y formatos entre fuentes.',
-	[PipelinePhase.RECONCILE]: 'Cruza fuentes equivalentes y marca los hechos en conflicto.',
-	[PipelinePhase.VALIDATE]: 'Calcula confianza por hecho y retiene lo insuficiente para revisión.',
-	[PipelinePhase.PUBLISH]: 'Escribe la nueva versión de la capa de conocimiento.'
+	[PipelinePhase.INVENTORY]: 'Clasifica cada fuente por tipo, idioma y calidad antes de tocar el contenido.',
+	[PipelinePhase.EXTRACTION]: 'Aplica el método de extracción adecuado según la clase de cada documento.',
+	[PipelinePhase.NORMALIZATION]: 'Unifica formato, unidades y estructura entre fuentes.',
+	[PipelinePhase.ENTITY_RELATIONS]: 'Detecta entidades y sus relaciones, con procedencia trazable a la fuente.',
+	[PipelinePhase.RAG_STRATEGY]:
+		'Elige la estrategia de recuperación y la topología de almacenamiento según la forma del corpus.',
+	[PipelinePhase.INDEXING]: 'Construye el índice de recuperación sobre el paquete normalizado.',
+	[PipelinePhase.VALIDATION]:
+		'Corre chequeos de calidad — los conflictos entre fuentes nunca se resuelven solos: quedan marcados y escalables.'
 };
 
 // ─── Source types ─────────────────────────────────────────────────────────────
