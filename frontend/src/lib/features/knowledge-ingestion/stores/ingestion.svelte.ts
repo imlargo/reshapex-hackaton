@@ -1,7 +1,7 @@
 import { ViewState } from '$lib/core/helpers/view-state.svelte';
 import { PhaseStatus, SourceType } from '$lib/types/knowledge';
 import type { KnowledgeSourceInput, PipelinePhaseState, PipelineRunResult } from '$lib/types/knowledge';
-import type { PipelineTraceEvent } from '../types';
+import type { PipelineDecisionEvent } from '../types';
 import { PIPELINE_PHASE_ORDER, SOURCE_FILE_EXTENSIONS } from '$lib/config';
 import { formatFileSize } from '$lib/utils/number';
 import { simulatePipelineRun } from '../services/ingestion';
@@ -26,7 +26,7 @@ export class IngestionStore {
 	fileSources: KnowledgeSourceInput[] = $state([]);
 	apiSources: KnowledgeSourceInput[] = $state([]);
 	phases: PipelinePhaseState[] = $state(initialPhases());
-	traceEvents: PipelineTraceEvent[] = $state([]);
+	decisions: PipelineDecisionEvent[] = $state([]);
 	result: PipelineRunResult | null = $state(null);
 
 	readonly sources = $derived([...this.fileSources, ...this.apiSources]);
@@ -68,7 +68,7 @@ export class IngestionStore {
 		if (this.sources.length === 0) return;
 		this.result = null;
 		this.phases = initialPhases();
-		this.traceEvents = [];
+		this.decisions = [];
 
 		const outcome = await this.view.run(() =>
 			simulatePipelineRun(
@@ -79,7 +79,7 @@ export class IngestionStore {
 					);
 				},
 				(event) => {
-					this.traceEvents = [...this.traceEvents, event];
+					this.decisions = [...this.decisions, event];
 				}
 			)
 		);
@@ -91,7 +91,7 @@ export class IngestionStore {
 		this.fileSources = [];
 		this.apiSources = [];
 		this.phases = initialPhases();
-		this.traceEvents = [];
+		this.decisions = [];
 		this.result = null;
 		this.view.reset();
 	}

@@ -40,7 +40,6 @@ export interface IndexStatsData {
 	unitsIndexed: number;
 	dimensions: number;
 	graphEdges: number;
-	buildTimeMs: number;
 }
 
 export enum ArchitectureStatus {

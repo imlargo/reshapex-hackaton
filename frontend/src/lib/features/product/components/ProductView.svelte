@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { MediaQuery } from 'svelte/reactivity';
-	import { StatTile, RadialProgress } from '$lib/components/common';
+	import { StatTile, RadialProgress, Iridescence } from '$lib/components/common';
 	import { ThinkingOrb, OrbState } from '$lib/components/common/thinking-orb';
-	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
@@ -25,6 +24,7 @@
 	import DatabaseIcon from '@lucide/svelte/icons/database';
 	import CircleAlertIcon from '@lucide/svelte/icons/circle-alert';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+	import SparklesIcon from '@lucide/svelte/icons/sparkles';
 
 	const FACT_STATUS_EXAMPLES: Record<FactStatus, { fact: string; note: string }> = {
 		[FactStatus.VERIFIED]: {
@@ -66,7 +66,11 @@
 	}
 </script>
 
-<div class="flex flex-col gap-8">
+<div class="relative flex flex-col gap-6">
+	<div class="pointer-events-none absolute inset-0 -z-10 opacity-20 grayscale">
+		<Iridescence color={[1, 1, 1]} amplitude={0.15} speed={0.7} />
+	</div>
+
 	<div class="flex flex-col gap-5">
 		<div class="flex items-start gap-4">
 			<ThinkingOrb state={OrbState.SHAPING} size={64} class="mt-1 hidden sm:block" />
@@ -83,7 +87,7 @@
 			</div>
 		</div>
 
-		<div class="flex flex-wrap items-center gap-2 ps-0 sm:ps-20">
+		<div class="flex flex-wrap items-center gap-2 sm:ps-20">
 			{#each Object.values(SourceType) as type (type)}
 				<span
 					class="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs text-muted-foreground"
@@ -95,7 +99,7 @@
 			{/each}
 		</div>
 
-		<div class="flex flex-wrap gap-3 ps-0 sm:ps-20">
+		<div class="flex flex-wrap gap-3 sm:ps-20">
 			<Button href="/knowledge/ingest">
 				Probar el pipeline
 				<ArrowRightIcon class="size-4" />
@@ -156,145 +160,182 @@
 		</StatTile>
 	</section>
 
-	<div use:reveal class="transition-all duration-700 ease-out">
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>Compara la diferencia</Card.Title>
-				<Card.Description>La misma pregunta, con y sin evidencia trazable.</Card.Description>
-			</Card.Header>
-			<Card.Content class="flex flex-col gap-5">
-				<div class="flex items-center gap-3">
-					<Switch bind:checked={grounded} id="grounded-toggle" />
-					<Label for="grounded-toggle">
-						{grounded ? `Respondiendo con ${config.name}` : 'Respondiendo con un chatbot genérico'}
-					</Label>
+	<div
+		use:reveal
+		class="overflow-hidden rounded-2xl border bg-card transition-all duration-700 ease-out"
+	>
+		<div class="flex flex-wrap items-center justify-between gap-3 border-b bg-muted/40 px-5 py-4">
+			<div class="flex items-center gap-3">
+				<div
+					class="flex size-9 items-center justify-center rounded-full"
+					style="background-color: color-mix(in oklab, var(--chart-source-api) 16%, transparent);"
+				>
+					<SparklesIcon class="size-5" style="color: var(--chart-source-api);" />
 				</div>
-
-				<div class="rounded-lg border bg-muted/30 p-4">
-					<p class="text-xs text-muted-foreground">Pregunta de un usuario</p>
-					<p class="mt-1 text-sm font-medium">
-						¿Cuál es la presión máxima de operación del sensor XG-400?
+				<div>
+					<p class="font-semibold">Compara la diferencia</p>
+					<p class="text-xs text-muted-foreground">
+						La misma pregunta, con y sin evidencia trazable.
 					</p>
 				</div>
+			</div>
+			<div class="flex items-center gap-2">
+				<Switch bind:checked={grounded} id="grounded-toggle" />
+				<Label for="grounded-toggle" class="text-xs text-muted-foreground">
+					{grounded ? `Con ${config.name}` : 'Chatbot genérico'}
+				</Label>
+			</div>
+		</div>
 
-				{#if grounded}
-					<div
-						class="flex items-start gap-4"
-						transition:fade={{ duration: reducedMotion.current ? 0 : 180 }}
-					>
-						<RadialProgress value={0.94} label="94%" color="var(--success)" size={52} />
-						<div class="flex flex-col gap-1 text-sm">
-							<p class="text-base font-semibold">6 bar</p>
-							<p class="text-muted-foreground">manual_XG400.pdf · sección 4.2</p>
-							<span
-								class="mt-1 inline-flex w-fit items-center gap-1.5 text-xs"
-								style="color: var(--success);"
-							>
-								<span class="size-1.5 rounded-full" style="background-color: var(--success);"
-								></span>
-								Verificado · trazable a la fuente
-							</span>
-						</div>
-					</div>
-				{:else}
-					<div
-						class="flex flex-col gap-1.5 text-sm"
-						transition:fade={{ duration: reducedMotion.current ? 0 : 180 }}
-					>
-						<p class="text-base font-medium text-muted-foreground">
-							"La presión máxima suele estar entre 6 y 10 bar, dependiendo del modelo."
-						</p>
-						<span class="text-xs text-muted-foreground"
-							>Sin fuente citada · confianza desconocida</span
+		<div class="flex flex-col gap-4 p-5">
+			<div class="rounded-lg border bg-muted/30 p-4">
+				<p class="text-xs text-muted-foreground">Pregunta de un usuario</p>
+				<p class="mt-1 text-sm font-medium">
+					¿Cuál es la presión máxima de operación del sensor XG-400?
+				</p>
+			</div>
+
+			{#if grounded}
+				<div
+					class="flex items-start gap-4"
+					transition:fade={{ duration: reducedMotion.current ? 0 : 180 }}
+				>
+					<RadialProgress value={0.94} label="94%" color="var(--success)" size={52} />
+					<div class="flex flex-col gap-1 text-sm">
+						<p class="text-base font-semibold">6 bar</p>
+						<p class="text-muted-foreground">manual_XG400.pdf · sección 4.2</p>
+						<span
+							class="mt-1 inline-flex w-fit items-center gap-1.5 text-xs"
+							style="color: var(--success);"
 						>
+							<span class="size-1.5 rounded-full" style="background-color: var(--success);"></span>
+							Verificado · trazable a la fuente
+						</span>
 					</div>
-				{/if}
+				</div>
+			{:else}
+				<div
+					class="flex flex-col gap-1.5 text-sm"
+					transition:fade={{ duration: reducedMotion.current ? 0 : 180 }}
+				>
+					<p class="text-base font-medium text-muted-foreground">
+						"La presión máxima suele estar entre 6 y 10 bar, dependiendo del modelo."
+					</p>
+					<span class="text-xs text-muted-foreground"
+						>Sin fuente citada · confianza desconocida</span
+					>
+				</div>
+			{/if}
 
-				<p class="text-xs text-muted-foreground">
-					Ejemplo ilustrativo del mismo flujo en ambos casos.
-				</p>
-			</Card.Content>
-		</Card.Root>
-	</div>
-
-	<div use:reveal class="transition-all duration-700 ease-out">
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>Cómo funciona</Card.Title>
-				<Card.Description>Siete fases, del documento crudo al hecho verificado.</Card.Description>
-			</Card.Header>
-			<Card.Content>
-				<Accordion.Root type="single" bind:value={openPhase}>
-					{#each PIPELINE_PHASE_ORDER as phase, i (phase)}
-						<Accordion.Item value={phase}>
-							<Accordion.Trigger>
-								<span class="flex items-center gap-3">
-									<span class="font-mono text-xs text-muted-foreground">0{i + 1}</span>
-									{PIPELINE_PHASE_LABELS[phase]}
-								</span>
-							</Accordion.Trigger>
-							<Accordion.Content>
-								<p class="text-muted-foreground">{PIPELINE_PHASE_DESCRIPTIONS[phase]}</p>
-							</Accordion.Content>
-						</Accordion.Item>
-					{/each}
-				</Accordion.Root>
-			</Card.Content>
-		</Card.Root>
-	</div>
-
-	<div use:reveal class="transition-all duration-700 ease-out">
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>Por qué es distinto</Card.Title>
-				<Card.Description>Los conflictos no se resuelven solos.</Card.Description>
-			</Card.Header>
-			<Card.Content class="flex flex-col gap-5">
-				<p class="max-w-2xl text-sm text-muted-foreground">
-					Cuando dos fuentes se contradicen, la mayoría de los sistemas promedia la diferencia o
-					elige la respuesta que suena mejor. {config.name} no: marca el hecho, conserva ambas versiones
-					con su procedencia, y lo escala a revisión humana en vez de fabricar un consenso donde no lo
-					hay.
-				</p>
-
-				<Tabs.Root bind:value={activeStatus}>
-					<Tabs.List>
-						{#each Object.values(FactStatus) as status (status)}
-							<Tabs.Trigger value={status}>{FACT_STATUS_LABELS[status]}</Tabs.Trigger>
-						{/each}
-					</Tabs.List>
-					{#each Object.values(FactStatus) as status (status)}
-						<Tabs.Content value={status}>
-							<div
-								class="rounded-lg border p-4"
-								style="border-left: 3px solid {FACT_STATUS_COLORS[status]};"
-							>
-								<p class="text-sm font-medium">{FACT_STATUS_EXAMPLES[status].fact}</p>
-								<p class="mt-1 text-sm text-muted-foreground">
-									{FACT_STATUS_EXAMPLES[status].note}
-								</p>
-							</div>
-						</Tabs.Content>
-					{/each}
-				</Tabs.Root>
-			</Card.Content>
-		</Card.Root>
+			<p class="border-t pt-3 text-xs text-muted-foreground">
+				Ejemplo ilustrativo del mismo flujo en ambos casos.
+			</p>
+		</div>
 	</div>
 
 	<div
 		use:reveal
-		class="flex flex-col items-center gap-4 rounded-xl border bg-muted/30 p-8 text-center transition-all duration-700 ease-out"
+		class="overflow-hidden rounded-2xl border bg-card transition-all duration-700 ease-out"
 	>
-		<p class="text-lg font-medium">¿Listo para ver a {config.name} en acción?</p>
-		<p class="max-w-md text-sm text-muted-foreground">
-			Sube una fuente real y mira cada fase del pipeline avanzar en vivo.
-		</p>
-		<div class="flex flex-wrap justify-center gap-3">
-			<Button href="/knowledge/ingest">
+		<div class="border-b bg-muted/40 px-5 py-4">
+			<div class="flex items-center gap-3">
+				<div
+					class="flex size-9 items-center justify-center rounded-full"
+					style="background-color: color-mix(in oklab, var(--chart-source-api) 16%, transparent);"
+				>
+					<WorkflowIcon class="size-5" style="color: var(--chart-source-api);" />
+				</div>
+				<div>
+					<p class="font-semibold">Cómo funciona</p>
+					<p class="text-xs text-muted-foreground">
+						Siete fases, del documento crudo al hecho verificado.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="p-5">
+			<Accordion.Root type="single" bind:value={openPhase}>
+				{#each PIPELINE_PHASE_ORDER as phase, i (phase)}
+					<Accordion.Item value={phase}>
+						<Accordion.Trigger>
+							<span class="flex items-center gap-3">
+								<span class="font-mono text-xs text-muted-foreground">0{i + 1}</span>
+								{PIPELINE_PHASE_LABELS[phase]}
+							</span>
+						</Accordion.Trigger>
+						<Accordion.Content>
+							<p class="text-muted-foreground">{PIPELINE_PHASE_DESCRIPTIONS[phase]}</p>
+						</Accordion.Content>
+					</Accordion.Item>
+				{/each}
+			</Accordion.Root>
+		</div>
+	</div>
+
+	<div
+		use:reveal
+		class="overflow-hidden rounded-2xl border bg-card transition-all duration-700 ease-out"
+	>
+		<div class="border-b bg-muted/40 px-5 py-4">
+			<div class="flex items-center gap-3">
+				<div
+					class="flex size-9 items-center justify-center rounded-full"
+					style="background-color: color-mix(in oklab, var(--success) 16%, transparent);"
+				>
+					<ShieldCheckIcon class="size-5" style="color: var(--success);" />
+				</div>
+				<div>
+					<p class="font-semibold">Por qué es distinto</p>
+					<p class="text-xs text-muted-foreground">Los conflictos no se resuelven solos.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-5 p-5">
+			<p class="max-w-2xl text-sm text-muted-foreground">
+				Cuando dos fuentes se contradicen, la mayoría de los sistemas promedia la diferencia o elige
+				la respuesta que suena mejor. {config.name} no: marca el hecho, conserva ambas versiones con su
+				procedencia, y lo escala a revisión humana en vez de fabricar un consenso donde no lo hay.
+			</p>
+
+			<Tabs.Root bind:value={activeStatus}>
+				<Tabs.List>
+					{#each Object.values(FactStatus) as status (status)}
+						<Tabs.Trigger value={status}>{FACT_STATUS_LABELS[status]}</Tabs.Trigger>
+					{/each}
+				</Tabs.List>
+				{#each Object.values(FactStatus) as status (status)}
+					<Tabs.Content value={status}>
+						<div
+							class="rounded-lg border p-4"
+							style="border-left: 3px solid {FACT_STATUS_COLORS[status]};"
+						>
+							<p class="text-sm font-medium">{FACT_STATUS_EXAMPLES[status].fact}</p>
+							<p class="mt-1 text-sm text-muted-foreground">{FACT_STATUS_EXAMPLES[status].note}</p>
+						</div>
+					</Tabs.Content>
+				{/each}
+			</Tabs.Root>
+		</div>
+	</div>
+
+	<div
+		use:reveal
+		class="flex flex-wrap items-center justify-between gap-4 overflow-hidden rounded-2xl border bg-card p-5 transition-all duration-700 ease-out"
+	>
+		<div>
+			<p class="font-semibold">¿Listo para ver a {config.name} en acción?</p>
+			<p class="text-xs text-muted-foreground">
+				Sube una fuente real y mira cada fase del pipeline avanzar en vivo.
+			</p>
+		</div>
+		<div class="flex flex-wrap gap-2">
+			<Button href="/knowledge/ingest" size="sm">
 				Probar el pipeline
 				<ArrowRightIcon class="size-4" />
 			</Button>
-			<Button href="/" variant="outline">Ver el dashboard</Button>
+			<Button href="/" variant="outline" size="sm">Ver el dashboard</Button>
 		</div>
 	</div>
 
