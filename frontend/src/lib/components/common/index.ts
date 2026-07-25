@@ -8,3 +8,5 @@ export { default as RadialProgress } from './RadialProgress.svelte';
 
 export { ThinkingOrb, OrbState, OrbTheme } from './thinking-orb';
 export type { OrbSize } from './thinking-orb';
+
+export { Iridescence } from './iridescence';
