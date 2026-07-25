@@ -28,24 +28,27 @@ export class IngestionStore {
 	phases: PipelinePhaseState[] = $state(initialPhases());
 	traceEvents: PipelineTraceEvent[] = $state([]);
 	result: PipelineRunResult | null = $state(null);
-	// Se incrementa en reset() para forzar el remount de <FileInput>, que gestiona
-	// su propia lista interna de archivos y no la sincroniza si se limpia por fuera.
-	resetToken = $state(0);
 
 	readonly sources = $derived([...this.fileSources, ...this.apiSources]);
 	readonly canRun = $derived(this.sources.length > 0 && !this.view.isLoading);
 	readonly isRunning = $derived(this.view.isLoading);
 
-	// Refleja 1:1 la lista que ya gestiona <FileInput> (agregar/quitar incluido),
-	// en vez de duplicar esa lógica acá.
-	setFiles(files: File[]) {
-		this.fileSources = files.map((file) => ({
-			id: `file-${file.name}-${file.size}-${file.lastModified}`,
-			name: file.name,
-			type: detectSourceType(file.name),
-			sizeLabel: formatFileSize(file.size),
-			addedAt: new Date().toISOString()
-		}));
+	addFiles(files: File[]) {
+		const existingIds = new Set(this.fileSources.map((source) => source.id));
+		const additions: KnowledgeSourceInput[] = files
+			.map((file) => ({
+				id: `file-${file.name}-${file.size}-${file.lastModified}`,
+				name: file.name,
+				type: detectSourceType(file.name),
+				sizeLabel: formatFileSize(file.size),
+				addedAt: new Date().toISOString()
+			}))
+			.filter((source) => !existingIds.has(source.id));
+		this.fileSources = [...this.fileSources, ...additions];
+	}
+
+	removeFileSource(id: string) {
+		this.fileSources = this.fileSources.filter((source) => source.id !== id);
 	}
 
 	addApiSource(url: string) {
@@ -90,7 +93,6 @@ export class IngestionStore {
 		this.phases = initialPhases();
 		this.traceEvents = [];
 		this.result = null;
-		this.resetToken += 1;
 		this.view.reset();
 	}
 }

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { FileInput } from '$lib/components/base';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
+	import * as InputGroup from '$lib/components/ui/input-group/index.js';
 	import { SOURCE_INTAKE_ACCEPT, SOURCE_TYPE_LABELS } from '$lib/config';
 	import type { IngestionStore } from '../stores/ingestion.svelte';
 	import PaperclipIcon from '@lucide/svelte/icons/paperclip';
@@ -11,12 +9,17 @@
 	let { store }: { store: IngestionStore } = $props();
 
 	let apiUrl = $state('');
-	// Arranca abierto: es la primera interacción del usuario con la vista.
-	let showDropzone = $state(true);
+	let fileInputEl: HTMLInputElement | undefined = $state();
 
 	function handleAddApi() {
 		store.addApiSource(apiUrl);
 		apiUrl = '';
+	}
+
+	function handleFilesPicked(e: Event) {
+		const input = e.currentTarget as HTMLInputElement;
+		if (input.files?.length) store.addFiles(Array.from(input.files));
+		input.value = '';
 	}
 </script>
 
@@ -26,6 +29,15 @@
 			{#each store.fileSources as source (source.id)}
 				<span class="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-xs">
 					{SOURCE_TYPE_LABELS[source.type]} · {source.name}
+					<button
+						type="button"
+						class="hover:text-destructive"
+						disabled={store.isRunning}
+						onclick={() => store.removeFileSource(source.id)}
+					>
+						<XIcon class="size-3" />
+						<span class="sr-only">Quitar {source.name}</span>
+					</button>
 				</span>
 			{/each}
 			{#each store.apiSources as source (source.id)}
@@ -33,7 +45,7 @@
 					{SOURCE_TYPE_LABELS[source.type]} · {source.name}
 					<button
 						type="button"
-						class="rounded-full hover:text-destructive"
+						class="hover:text-destructive"
 						disabled={store.isRunning}
 						onclick={() => store.removeApiSource(source.id)}
 					>
@@ -45,46 +57,43 @@
 		</div>
 	{/if}
 
-	<div class:hidden={!showDropzone}>
-		{#key store.resetToken}
-			<FileInput
-				variant="multiple"
-				accept={SOURCE_INTAKE_ACCEPT}
-				maxFiles={20}
-				disabled={store.isRunning}
-				onFilesChange={(files) => store.setFiles(files)}
-			/>
-		{/key}
-	</div>
+	<input
+		bind:this={fileInputEl}
+		type="file"
+		multiple
+		accept={SOURCE_INTAKE_ACCEPT}
+		class="hidden"
+		onchange={handleFilesPicked}
+	/>
 
-	<div class="flex items-center gap-2">
-		<Button
-			type="button"
-			variant="outline"
-			size="icon"
-			disabled={store.isRunning}
-			onclick={() => (showDropzone = !showDropzone)}
-			aria-label={showDropzone ? 'Ocultar archivos' : 'Adjuntar archivos'}
-		>
-			<PaperclipIcon class="size-4" />
-		</Button>
-		<Input
-			type="url"
+	<InputGroup.Root>
+		<InputGroup.Addon>
+			<InputGroup.Button
+				size="icon-xs"
+				class="rounded-full"
+				disabled={store.isRunning}
+				onclick={() => fileInputEl?.click()}
+				aria-label="Adjuntar archivos"
+			>
+				<PaperclipIcon />
+			</InputGroup.Button>
+		</InputGroup.Addon>
+		<InputGroup.Input
 			placeholder="Pegá la URL de una API…"
 			bind:value={apiUrl}
 			disabled={store.isRunning}
 			onkeydown={(e) => e.key === 'Enter' && handleAddApi()}
-			class="flex-1"
 		/>
-		<Button
-			type="button"
-			variant="outline"
-			size="icon"
-			onclick={handleAddApi}
-			disabled={store.isRunning || !apiUrl.trim()}
-			aria-label="Agregar API"
-		>
-			<Link2Icon class="size-4" />
-		</Button>
-	</div>
+		<InputGroup.Addon align="inline-end">
+			<InputGroup.Button
+				size="icon-xs"
+				class="rounded-full"
+				onclick={handleAddApi}
+				disabled={store.isRunning || !apiUrl.trim()}
+				aria-label="Agregar API"
+			>
+				<Link2Icon />
+			</InputGroup.Button>
+		</InputGroup.Addon>
+	</InputGroup.Root>
 </div>
