@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentSprint Director"
+  short_description: "Run a rubric-first rapid agent sprint"
+  default_prompt: "Use $sprint-director to adapt this repository, ingest the case, freeze the judge journey, and direct implementation."

@@ -1,0 +1,6 @@
+00_inbox/raw/*
+!00_inbox/raw/.gitkeep
+05_knowledge/index/*
+!05_knowledge/index/.gitkeep
+*.tmp
+*.cache

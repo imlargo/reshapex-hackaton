@@ -1,0 +1,132 @@
+# Repository Map
+
+Generated structural map; source remains in place.
+
+- `.agents/`
+- `.agents/skills/`
+- `.agents/skills/sprint-director/`
+- `.agents/skills/sprint-director/agents/`
+- `.agents/skills/sprint-director/references/`
+- `.agents/skills/sprint-director/SKILL.md`
+- `.env`
+- `.env.example`
+- `.gitignore`
+- `.python-version`
+- `AGENTS.md`
+- `agentsprint/`
+- `agentsprint/.gitignore`
+- `agentsprint/00_inbox/`
+- `agentsprint/00_inbox/DAY_INSTRUCTIONS.md`
+- `agentsprint/00_inbox/LINKS.md`
+- `agentsprint/00_inbox/raw/`
+- `agentsprint/00_inbox/raw/.gitkeep`
+- `agentsprint/01_case/`
+- `agentsprint/01_case/BRAND.md`
+- `agentsprint/01_case/CASE.md`
+- `agentsprint/01_case/FACTS_AND_CONSTRAINTS.md`
+- `agentsprint/01_case/OPEN_QUESTIONS.md`
+- `agentsprint/01_case/SOURCE_MANIFEST.md`
+- `agentsprint/02_decisions/`
+- `agentsprint/02_decisions/DECISION_LOG.md`
+- `agentsprint/02_decisions/DECISION_QUEUE.md`
+- `agentsprint/02_decisions/OPTION_PACKS.md`
+- `agentsprint/02_decisions/SCORE_STRATEGY.md`
+- `agentsprint/03_contracts/`
+- `agentsprint/03_contracts/ACCEPTANCE.md`
+- `agentsprint/03_contracts/ARCHITECTURE.md`
+- `agentsprint/03_contracts/INTERFACES.md`
+- `agentsprint/03_contracts/PRIMARY_JOURNEY.md`
+- `agentsprint/04_workstreams/`
+- `agentsprint/04_workstreams/BOARD.md`
+- `agentsprint/04_workstreams/BRANCH_PLAN.md`
+- `agentsprint/04_workstreams/handoffs/`
+- `agentsprint/04_workstreams/handoffs/PERSON_1.md`
+- `agentsprint/04_workstreams/handoffs/PERSON_2.md`
+- `agentsprint/04_workstreams/handoffs/PERSON_3.md`
+- `agentsprint/04_workstreams/handoffs/TEMPLATE.md`
+- `agentsprint/04_workstreams/integration/`
+- `agentsprint/04_workstreams/integration/INTEGRATION_LOG.md`
+- `agentsprint/04_workstreams/integration/MERGE_ORDER.md`
+- `agentsprint/04_workstreams/tasks/`
+- `agentsprint/04_workstreams/tasks/TEMPLATE.md`
+- `agentsprint/04_workstreams/tasks/USUARIO_1_ADAPTIVE_RAG.md`
+- `agentsprint/04_workstreams/tasks/USUARIO_2_SEMANTIC_PROCESSING.md`
+- `agentsprint/04_workstreams/tasks/USUARIO_3_WEB_VALIDATION.md`
+- `agentsprint/04_workstreams/TEAM.md`
+- `agentsprint/05_knowledge/`
+- `agentsprint/05_knowledge/cleaned/`
+- `agentsprint/05_knowledge/cleaned/.gitkeep`
+- `agentsprint/05_knowledge/EVIDENCE_MAP.md`
+- `agentsprint/05_knowledge/index/`
+- `agentsprint/05_knowledge/index/.gitkeep`
+- `agentsprint/05_knowledge/structured/`
+- `agentsprint/05_knowledge/structured/.gitkeep`
+- `agentsprint/06_validation/`
+- `agentsprint/06_validation/DEMO_CASES.md`
+- `agentsprint/06_validation/FAILURE_LOG.md`
+- `agentsprint/06_validation/SCORECARD.md`
+- `agentsprint/06_validation/TECHNICAL_CHECKLIST.md`
+- `agentsprint/07_demo/`
+- `agentsprint/07_demo/JUDGE_QA.md`
+- `agentsprint/07_demo/PITCH.md`
+- `agentsprint/07_demo/RUNBOOK.md`
+- `agentsprint/99_archive/`
+- `agentsprint/99_archive/.gitkeep`
+- `agentsprint/AGENT_PLAYBOOK.md`
+- `agentsprint/CONTROL.md`
+- `agentsprint/README.md`
+- `agentsprint/REPOSITORY_CONTEXT.md`
+- `agentsprint/REPOSITORY_MAP.md`
+- `agentsprint/START_HERE.md`
+- `app.py`
+- `documents/`
+- `documents/01_CODEX_INSTRUCTION_ARCHITECTURE.md`
+- `documents/02_PRE_HACKATHON_REPOSITORY_PLAN.md`
+- `documents/03_RAPID_MVP_BUILD_PROTOCOL.md`
+- `documents/04_RESEARCH_AND_RATIONALE.md`
+- `documents/05_REVISED_MASTER_PLAN.md`
+- `documents/06_IMAGINARY_CASE_WALKTHROUGH.md`
+- `documents/README.md`
+- `examples/`
+- `examples/rehearsal/`
+- `examples/rehearsal/01_CASE_AND_QUESTIONS.md`
+- `examples/rehearsal/02_OPTION_PACK.md`
+- `examples/rehearsal/03_DECISIONS_AND_CONTRACTS.md`
+- `examples/rehearsal/04_BOARD_SCORE_AND_PITCH.md`
+- `examples/rehearsal/DAY_INSTRUCTIONS.md`
+- `examples/rehearsal/README.md`
+- `pyproject.toml`
+- `README.md`
+- `scripts/`
+- `scripts/check_secrets.py`
+- `scripts/preflight.ps1`
+- `scripts/real_preflight.py`
+- `scripts/refresh_repo_map.py`
+- `scripts/smoke.py`
+- `scripts/validate_control_room.py`
+- `src/`
+- `src/agentsprint_starter/`
+- `src/agentsprint_starter/__init__.py`
+- `src/agentsprint_starter/config.py`
+- `src/agentsprint_starter/ingest.py`
+- `src/agentsprint_starter/provider.py`
+- `src/agentsprint_starter/runner.py`
+- `src/agentsprint_starter/schemas.py`
+- `src/agentsprint_starter/testing.py`
+- `src/agentsprint_starter/tools.py`
+- `src/agentsprint_starter/ui.py`
+- `tests/`
+- `tests/test_ingest.py`
+- `tests/test_provider.py`
+- `tests/test_runner.py`
+- `tests/test_schemas.py`
+- `tests/test_tools.py`
+- `tests/test_ui.py`
+
+## Entry points
+
+- UI: `app.py`
+- Runtime package: `src/agentsprint_starter/`
+- Deterministic smoke: `scripts/smoke.py`
+- Real-provider preflight: `scripts/real_preflight.py`
+- Sprint boot: `agentsprint/START_HERE.md`
