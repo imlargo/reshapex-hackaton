@@ -4,6 +4,7 @@ import { UserRole } from '$lib/types/auth/roles';
 // Add one entry per feature/section that needs access control.
 export enum PermissionKey {
 	Dashboard = 'Dashboard',
+	Knowledge = 'Knowledge',
 	Settings = 'Settings',
 	Admin = 'Admin'
 }
@@ -23,6 +24,7 @@ export const ROLE_LABELS: Record<UserRole, string> = {
 // Maps each PermissionKey to the roles that can access it.
 export const PERMISSION_GROUPS = {
 	[PermissionKey.Dashboard]: [UserRole.ADMIN, UserRole.MEMBER],
+	[PermissionKey.Knowledge]: [UserRole.ADMIN, UserRole.MEMBER],
 	[PermissionKey.Settings]: [UserRole.ADMIN, UserRole.MEMBER],
 	[PermissionKey.Admin]: [UserRole.ADMIN]
 } as const satisfies Record<PermissionKey, readonly UserRole[]>;
@@ -32,6 +34,7 @@ export const AUTH_PUBLIC_ROUTE_PREFIXES = ['/login', '/register', '/logout', '/a
 
 export const AUTH_ROUTE_PERMISSIONS = {
 	'/': [...PERMISSION_GROUPS[PermissionKey.Dashboard]],
+	'/knowledge/ingest': [...PERMISSION_GROUPS[PermissionKey.Knowledge]],
 	'/settings': [...PERMISSION_GROUPS[PermissionKey.Settings]],
 	'/admin': [...PERMISSION_GROUPS[PermissionKey.Admin]]
 } as const satisfies Record<string, readonly UserRole[]>;

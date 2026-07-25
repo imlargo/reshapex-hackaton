@@ -1,4 +1,5 @@
 import HomeIcon from '@lucide/svelte/icons/house';
+import BrainIcon from '@lucide/svelte/icons/brain';
 import SettingsIcon from '@lucide/svelte/icons/settings';
 import ShieldIcon from '@lucide/svelte/icons/shield';
 import { PermissionKey } from './permissions';
@@ -27,6 +28,13 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 		to: '/',
 		group: NavigationGroup.Main,
 		requiredPermissions: [PermissionKey.Dashboard]
+	},
+	{
+		title: 'Base de conocimiento',
+		icon: BrainIcon,
+		to: '/knowledge/ingest',
+		group: NavigationGroup.Main,
+		requiredPermissions: [PermissionKey.Knowledge]
 	},
 	{
 		title: 'Settings',
